@@ -63,13 +63,15 @@ $ python astraahome.py
 ```
 
 ## Additional Informations
-General Category:
-  - Find your output files in the "temp" folder.
-  - If you find any malfunction, contact me on Discord: Astraa#4589.
+General Informations:
+- Find your output files in the "temp" folder.
+- If you find any malfunction, contact me on Discord: Astraa#4589.
 
-Script Category:
+Script Informations:
 - For the operation of the RAT Tool, please refer to the creator's page.
 - For the operation of the VideoCrash Maker, please refer to this page.
+
+- f
 
 ## Example
 ![home.png](https://cdn.discordapp.com/attachments/778283706388709376/883048993691688980/unknown.png)
