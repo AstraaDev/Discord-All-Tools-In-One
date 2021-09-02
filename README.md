@@ -44,44 +44,19 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ## How To Use
 ```bash
-# Install dependencies (you need Maven and JDK 8 package installed)
+# Install Python3 (unless already done)
 $ apt install maven default-jdk default-jre openjdk-8-jdk openjdk-8-jre -y
 
-# To generate a .EXE using launch4j are necessary the following packages
-$ apt install zlib1g-dev libncurses5-dev lib32z1 lib32ncurses6 -y
-
 # Clone this repository
-$ git clone https://github.com/tiagorlampert/sAINT.git
+$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One
 
-# Go into the repository
-$ cd sAINT
+# Install Modules
+$ pip3 install -r requirements.txt
 
-# Install and configure Maven libraries
-$ chmod +x configure.sh
-$ ./configure.sh
 
 # Run
-$ java -jar sAINT.jar
+$ python astraahome.py
 ```
-
-
-
-
-
-
-
-
-# Requirements
-```
-pip3 install -r requirements.txt
-```
-
-# Features
- - No data caching.
- - Transfers via Discord webhook.
- - Searching for tokens in multiple directories (Discord, Discord PTB, Discord Canary, Chrome, Opera, Brave and Yandex).
- - No external Python modules needed.
- - No external Python modules required.
 
 # How to use
  1. Create a webhook on your Discord server. I recommend creating a new server.
