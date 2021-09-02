@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  (s)AINT is a Spyware Generator for Windows systems written in Java.
+  [Discord] - All Tools In One is a Script Gathering for Windows systems written in Python.
 </p>
 
 ## Disclaimer
