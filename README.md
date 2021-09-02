@@ -13,6 +13,9 @@
     <a href="https://github.com/AstraaDev">
     <img src="https://gpvc.arturio.dev/AstraaDev">
   </a>
+  <a href="https://github.com/AstraaDev">
+    <img src="https://img.shields.io/github/repo-size/TheAlgorithms/Python.svg?label=Repo%20size&style=flat-square">
+  </a>
 </p>
 
 <p align="center">
