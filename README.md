@@ -10,8 +10,7 @@
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One">
     <img src="https://img.shields.io/badge/covarage-85%25-orange">
   </a>
-  <a href="https://github.com/AstraaDev">
-    <img src="https://img.shields.io/github/repo-size/AstraaDev/Discord-All-Tools-In-One.svg?label=Repo%20size&style=flat-square">
+
   </a>
   <a href="https://github.com/AstraaDev">
     <img src="https://gpvc.arturio.dev/AstraaDev">
