@@ -7,7 +7,7 @@
 
 # Discord All Tools in One [![Build Status](https://img.shields.io/badge/covarage-85%25-orange)]() ![Profile views](https://gpvc.arturio.dev/AstraaDev)
 
-> All Tools In One est un Script Développer avec Python3. Il rassemble au total 14 tools Discord (dont un RAT, un Raid Tool, un Token Grabber, un Créateur de Video faisant Crash, ect). It has a pleasant and intuitive interface to facilitate the use of all.
+> All Tools In One est un Script Développer avec Python3. Il rassemble au total 14 tools Discord (dont un RAT, un Raid Tool, un Token Grabber, un Créateur de Video faisant Crash, ect). It has a pleasant and intuitive interface to facilitate the use of all with help and explanations for each of them.
 > (PS: I would like to specify that there are scripts not made by me, I will specify which ones in the Credit part)
 
 # Requirements
