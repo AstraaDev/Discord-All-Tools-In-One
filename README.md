@@ -40,7 +40,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] - AutoLogin
 - [x] - Nitro Generator
 - [x] - Token Generator
-- [x] - BysPass Block
+- [ ] - BysPass Block (Patched)
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
