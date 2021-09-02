@@ -5,7 +5,7 @@
   </p>
 </div>
 
-# Discord All Tools in One [![Build Status](https://img.shields.io/badge/covarage-85%25-succes)]() ![Profile views](https://gpvc.arturio.dev/AstraaDev)
+# Discord All Tools in One [![Build Status](https://img.shields.io/badge/covarage-85%25-orange)]() ![Profile views](https://gpvc.arturio.dev/AstraaDev)
 
 > A Discord token grabber written in Python (this version of the grabber only supports Windows).
 
