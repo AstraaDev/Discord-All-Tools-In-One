@@ -32,8 +32,15 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] - VideoCrash Maker
 - [x] - Massive Report
 - [x] - WebHooks Spammer
-- [ ] - Token Grabber
-- [ ] - fake
+- [x] - Token Grabber
+- [x] - Token Qr Generator
+- [x] - Token BrutForce
+- [x] - Token Rape
+- [x] - Token Informations
+- [x] - AutoLogin
+- [x] - Nitro Generator
+- [x] - Token Generator
+- [x] - BysPass Block
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
