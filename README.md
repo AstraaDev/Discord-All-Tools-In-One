@@ -27,11 +27,13 @@
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 ## Features
-- [x] - RAT Tool            ✅ - Token Rape                   ✅ - Token Generator
-- [x] - Raid Toolㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ✅ - Token Grabber               ✅ - Token Informations           ✅ - ByPass Block
-- [x] - VideoCrash Makerㅤㅤㅤㅤㅤㅤㅤ✅ - Token QrGenerator           ✅ - AutoLogin
+- [x] - RAT Tool
+- [x] - Raid Tool
+- [x] - VideoCrash Maker
 - [x] - Massive Report
-- [x] - WebHooks Spammerㅤㅤㅤㅤㅤㅤㅤㅤ✅ - Token BrutForce             ✅ - Nitro Generator
+- [x] - WebHooks Spammer
+- [ ] - Token Grabber
+- [ ] - fake
 
 ## Tested On
 [![Kali)](https://www.google.com/s2/favicons?domain=https://www.kali.org/)](https://www.kali.org) **Kali Linux - ROLLING EDITION**
