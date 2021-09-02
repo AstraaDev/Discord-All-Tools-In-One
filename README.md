@@ -60,7 +60,7 @@ $ python astraahome.py
 ```
 
 ## Additional Informations
-- Find the output files in the "Temp" folder
+- Find the output files in the "temp" folder.
 
 ## Example
 ![home.png](https://cdn.discordapp.com/attachments/778283706388709376/883048993691688980/unknown.png)
