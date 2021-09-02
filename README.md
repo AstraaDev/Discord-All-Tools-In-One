@@ -30,17 +30,17 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] - [RAT Tool](https://github.com/moom825/Discord-RAT)
 - [x] - [Raid Tool](https://github.com/zetism/AveryNuker)
 - [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker)
-- [x] - [Massive Report]()
-- [x] - [WebHooks Spammer]()
+- [x] - Massive Report
+- [x] - WebHooks Spammer
 - [x] - [Token Grabber](https://github.com/AstraaDev/Discord-Token-Grabber)
 - [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token)
-- [x] - [Token BrutForce]()
-- [x] - [Token Rape]()
-- [x] - [Token Informations]()
+- [x] - Token BrutForce
+- [x] - Token Rape
+- [x] - Token Informations
 - [x] - [AutoLogin](https://github.com/AstraaDev/Discord-Token-AutoLogin)
-- [x] - [Nitro Generator]()
-- [x] - [Token Generator]()
-- [ ] - [BysPass Block]()
+- [x] - Nitro Generator]
+- [x] - Token Generator
+- [ ] - BysPass Block
 
 ## How To Use
 
