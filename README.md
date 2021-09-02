@@ -13,17 +13,14 @@ Please fell free to clone this repository and continue the development of this t
 
 <h1 align="center">(s)AINT</h1>
 <p align="center">
-  <a href="https://gpvc.arturio.dev/AstraaDev">
-    <img src="https://img.shields.io/badge/Java-8-red.svg">
+  <a href="https://www.python.org">
+    <img src="https://img.shields.io/badge/Python-8-red.svg">
   </a>
-  <a href="https://github.com/tiagorlampert/sAINT/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-BSD%203-lightgrey.svg">
-  </a>
-  <a href="https://github.com/tiagorlampert/sAINT/tree/master/src_template/main/java/saint">
-    <img src="https://img.shields.io/badge/Release-1.0-blue.svg">
+  <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One">
+    <img src="https://img.shields.io/badge/covarage-85%25-orange">
   </a>
     <a href="https://opensource.org/licenses/BSD-3-Clause">
-    <img src="https://img.shields.io/badge/Open%20Source-%E2%9D%A4-brightgreen.svg">
+    <img src="https://gpvc.arturio.dev/AstraaDev">
   </a>
 </p>
 
