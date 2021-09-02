@@ -44,15 +44,11 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ## How To Use
 ```bash
-# Install Python3 (unless already done)
-$ apt install maven default-jdk default-jre openjdk-8-jdk openjdk-8-jre -y
-
 # Clone this repository
-$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One
+$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
 
 # Install Modules
 $ pip3 install -r requirements.txt
-
 
 # Run
 $ python astraahome.py
