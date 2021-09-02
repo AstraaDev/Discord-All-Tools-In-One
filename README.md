@@ -60,6 +60,7 @@ $ python astraahome.py
 ```
 
 ##Additional Informations
+Blablabla
 
 ## Example
 ![home.png](https://cdn.discordapp.com/attachments/778283706388709376/883048993691688980/unknown.png)
