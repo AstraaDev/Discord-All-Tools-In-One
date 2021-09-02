@@ -11,7 +11,7 @@ Please fell free to clone this repository and continue the development of this t
   <img src="https://raw.githubusercontent.com/tiagorlampert/sAINT/master/content/logo.png">
 </p>
 
-<h1 align="center">(s)AINT</h1>
+<h1 align="center">All Tools In One</h1>
 <p align="center">
   <a href="https://www.python.org">
     <img src="https://img.shields.io/badge/Python-3-yellow.svg">
