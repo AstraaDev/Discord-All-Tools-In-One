@@ -43,14 +43,19 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [ ] - BysPass Block
 
 ## How To Use
+
+Clone this repository
 ```
-# Clone this repository
 $ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
+```
 
-# Install Modules
+Install Modules
+```
 $ pip3 install -r requirements.txt
+```
 
-# Run
+Run
+```
 $ python astraahome.py
 ```
 
