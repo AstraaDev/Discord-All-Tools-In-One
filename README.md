@@ -9,6 +9,11 @@
 
 > A Discord token grabber written in Python (this version of the grabber only supports Windows).
 
+# Requirements
+```
+pip3 install -r requirements.txt
+```
+
 # Features
  - No data caching.
  - Transfers via Discord webhook.
