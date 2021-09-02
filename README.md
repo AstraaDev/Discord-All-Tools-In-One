@@ -60,7 +60,7 @@ $ python astraahome.py
 ```
 
 # Example
-![tokengrabber_example.png](https://cdn.discordapp.com/attachments/778283706388709376/880756048208740373/toest_censored.jpg)
+![tokengrabber_example.png]()
 
 # Credits
 [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='25'>](https://github.com/AstraaDev)          [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg' alt='twitter' height='25'>](https://twitter.com/AstraaDev)          [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg' alt='website' height='25'>](http://astraadev.club)  
