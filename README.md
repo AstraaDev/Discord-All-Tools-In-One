@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.tomsguide.fr/content/uploads/sites/2/2020/06/github.jpg">
+  <img src="https://i.discord.fr/PSS.png">
 </p>
 
 <h1 align="center">[Discord] - All Tools In One</h1>
