@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tiagorlampert/sAINT/master/content/logo.png">
+  <img src="https://i.pinimg.com/originals/1b/43/cb/1b43cbfaa995362ef52f3bbcbf2336ae.jpg">
 </p>
 
 <h1 align="center">[Discord] - All Tools In One</h1>
