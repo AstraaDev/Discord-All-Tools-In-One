@@ -1,12 +1,3 @@
-----------------------------------------------------------------------------------------------
-## Discontinued
-
-I decided to discontinue the development of this tool to concentrate my efforts on others one projects.
-
-Please fell free to clone this repository and continue the development of this tool.
-
-----------------------------------------------------------------------------------------------
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/tiagorlampert/sAINT/master/content/logo.png">
 </p>
