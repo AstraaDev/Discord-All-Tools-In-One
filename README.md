@@ -7,7 +7,8 @@
 
 # Discord All Tools in One [![Build Status](https://img.shields.io/badge/covarage-85%25-orange)]() ![Profile views](https://gpvc.arturio.dev/AstraaDev)
 
-> A Discord token grabber written in Python (this version of the grabber only supports Windows).
+> All Tools In One est un Script Développer avec Python3. Il rassemble au total 14 tools Discord (dont un RAT, un Raid Tool, un Token Grabber, un Créateur de Video faisant Crash, ect). It has a pleasant and intuitive interface to facilitate the use of all.
+> (PS: I would like to specify that there are scripts not made by me, I will specify which ones in the Credit part)
 
 # Requirements
 ```
