@@ -59,7 +59,7 @@ $ pip3 install -r requirements.txt
 $ python astraahome.py
 ```
 
-##Additional Informations
+## Additional Informations
 Blablabla
 
 ## Example
