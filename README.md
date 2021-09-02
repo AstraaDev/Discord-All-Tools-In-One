@@ -67,7 +67,7 @@ $ python astraahome.py
 <br>
 [![Astraa's GitHub stats](https://github-readme-stats.vercel.app/api?username=AstraaDev)](https://github.com/AstraaDev/github-readme-stats)
 
-# Donate
+# Support
 Support this project and [others](https://github.com/AstraaDev) by Astraa via [PayPal](https://www.paypal.com/).
 <br>
 <br>
