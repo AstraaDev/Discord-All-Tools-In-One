@@ -68,8 +68,8 @@ General Informations:
 - If you find any malfunction, contact me on Discord: Astraa#4589.
 
 Script Informations:
-- For the operation of the RAT Tool, please refer to the creator's page.
-- For the operation of the VideoCrash Maker, please refer to this page.
+- For the operation of the RAT Tool, please refer to the [creator's page](https://github.com/moom825/Discord-RAT).
+- For the operation of the VideoCrash Maker, please refer to [this page](https://github.com/AstraaDev/Discord-VideoCrashMaker).
 
 ## Example
 ![home.png](https://cdn.discordapp.com/attachments/778283706388709376/883048993691688980/unknown.png)
