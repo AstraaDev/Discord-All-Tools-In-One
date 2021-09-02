@@ -27,8 +27,8 @@
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 ## Features
-- [x] - RAT Tool
-- [x] - Raid Tool
+- [x] - [RAT Tool](https://github.com/moom825/Discord-RAT)
+- [x] - [Raid Tool](https://github.com/zetism/AveryNuker)
 - [x] - VideoCrash Maker
 - [x] - Massive Report
 - [x] - WebHooks Spammer
