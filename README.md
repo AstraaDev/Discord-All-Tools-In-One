@@ -64,7 +64,7 @@ $ python astraahome.py
 
 ## Additional Informations
 General Informations:
-- Find your output files in the "temp" folder.
+- Find your output files in the  [temp](/temp) folder.
 - If you find any malfunction, contact me on Discord: Astraa#4589.
 
 Script Informations:
