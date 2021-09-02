@@ -14,12 +14,12 @@ Please fell free to clone this repository and continue the development of this t
 <h1 align="center">(s)AINT</h1>
 <p align="center">
   <a href="https://www.python.org">
-    <img src="https://img.shields.io/badge/Python-8-red.svg">
+    <img src="https://img.shields.io/badge/Python-3-yellow.svg">
   </a>
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One">
     <img src="https://img.shields.io/badge/covarage-85%25-orange">
   </a>
-    <a href="https://opensource.org/licenses/BSD-3-Clause">
+    <a href="https://github.com/AstraaDev">
     <img src="https://gpvc.arturio.dev/AstraaDev">
   </a>
 </p>
