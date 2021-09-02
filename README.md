@@ -11,7 +11,7 @@ Please fell free to clone this repository and continue the development of this t
   <img src="https://raw.githubusercontent.com/tiagorlampert/sAINT/master/content/logo.png">
 </p>
 
-<h1 align="center">All Tools In One</h1>
+<h1 align="center">[Discord] - All Tools In One</h1>
 <p align="center">
   <a href="https://www.python.org">
     <img src="https://img.shields.io/badge/Python-3-yellow.svg">
@@ -71,25 +71,7 @@ $ java -jar sAINT.jar
 
 
 
-<div align="center">
-  <br />
-  <p>
-    <a href="https://github.com/AstraaDev"><img src="https://files.readme.io/d14112d-Cloudsmith-Integrations-Banner-GitHub.png" width="1000"></a>
-  </p>
-</div>
 
-# Discord All Tools in One [![Build Status](https://img.shields.io/badge/covarage-85%25-orange)]() ![Profile views](https://gpvc.arturio.dev/AstraaDev)
-
-<p align="center">
-  (s)AINT is a Spyware Generator for Windows systems written in Java.
-</p>
-
-# Disclaimer
-<p align="center">
-  :computer: This project was created only for good purposes and personal use.
-</p>
-
-THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 # Requirements
 ```
