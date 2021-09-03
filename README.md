@@ -5,7 +5,7 @@
 <h1 align="center">[Discord] - All Tools In One</h1>
 <p align="center">
   <a href="https://www.python.org">
-    <img src="https://img.shields.io/badge/Python-3-yellow.svg">
+    <img src="https://img.shields.io/badge/Python-3.-yellow.svg">
   </a>
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One">
     <img src="https://img.shields.io/badge/covarage-85%25-orange">
