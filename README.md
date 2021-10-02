@@ -4,7 +4,7 @@
 
 <h1 align="center">[Discord] - All Tools In One</h1>
 <p align="center">
-  <a href="https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt">
+  <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-important">
   </a>
   <a href="https://www.python.org">
