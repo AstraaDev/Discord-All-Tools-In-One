@@ -13,4 +13,4 @@ selenium==3.141.0
 aiohttp==3.7.4.post0
 pypresence==4.2.0
 dhooks==1.1.4
-pyinstaller
+pyinstaller==4.5.1
