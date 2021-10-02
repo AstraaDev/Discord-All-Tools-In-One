@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/License-MIT-important">
   </a>
   <a href="https://www.python.org">
-    <img src="https://img.shields.io/badge/Python-3.-informational.svg">
+    <img src="https://img.shields.io/badge/Python-3.9-informational.svg">
   </a>
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One">
     <img src="https://img.shields.io/badge/covarage-90%25-yellowgreen">
