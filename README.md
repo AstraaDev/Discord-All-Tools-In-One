@@ -4,6 +4,9 @@
 
 <h1 align="center">[Discord] - All Tools In One</h1>
 <p align="center">
+  <a href="https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt">
+    <img src="https://img.shields.io/badge/apm/l/AstraaDev.svg">
+  </a>
   <a href="https://www.python.org">
     <img src="https://img.shields.io/badge/Python-3.-yellow.svg">
   </a>
