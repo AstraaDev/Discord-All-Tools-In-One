@@ -27,7 +27,6 @@
 <p align="center">
   [Discord] - All Tools In One is a Script Gathering for Windows systems written in Python.
 </p>
-  If you need Help [click here](https://www.youtube.com/watch?v=27-Swg_MUNw&t=16s)
 
 ## Disclaimer
 <p align="center">
@@ -71,6 +70,7 @@ $ python astraahome.py
 
 ## Additional Informations
 General Informations:
+- If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=27-Swg_MUNw&t=16s) to watch the YouTube video.
 - Find your output files in the  [temp](/temp) folder.
 - If you find any malfunction, contact me on Discord: Astraa#4589.
 
