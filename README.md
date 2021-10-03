@@ -26,6 +26,7 @@
 
 <p align="center">
   [Discord] - All Tools In One is a Script Gathering for Windows systems written in Python.
+  If you need Help [click here](https://www.youtube.com/watch?v=27-Swg_MUNw&t=16s)
 </p>
 
 ## Disclaimer
