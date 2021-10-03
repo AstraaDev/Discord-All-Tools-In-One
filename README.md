@@ -68,17 +68,17 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ㅤ● Clone the repository.
 ```
-ㅤㅤ$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
+ㅤ$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
 ```
 
 ㅤ● Install Modules.
 ```
-ㅤㅤ$ pip3 install -r requirements.txt
+ㅤ$ pip3 install -r requirements.txt
 ```
 
 ㅤ● Run.
 ```
-ㅤㅤ$ python astraahome.py
+ㅤ$ python astraahome.py
 ```
 
 ## Additional Informations
