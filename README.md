@@ -53,19 +53,32 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ## How To Install
 
-● Clone the repository
+### -Automated installation:
+
+ㅤ● Launch the [start.bat](start.bat) file. A new file will be created. You will only have to launch it.
+ㅤ
+
+ㅤ
+
+### OR
+ㅤ
+
+
+### -Manual installation:
+
+ㅤ● Clone the repository.
 ```
-$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
+ㅤㅤ$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
 ```
 
-● Install Modules
+ㅤ● Install Modules.
 ```
-$ pip3 install -r requirements.txt
+ㅤㅤ$ pip3 install -r requirements.txt
 ```
 
-● Run
+ㅤ● Run.
 ```
-$ python astraahome.py
+ㅤㅤ$ python astraahome.py
 ```
 
 ## Additional Informations
