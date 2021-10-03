@@ -55,7 +55,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ### -Automated installation:
 
-ㅤ● Launch the [start.bat](start.bat) file. A new file will be created. You will only have to launch it.
+ㅤ● Launch the [setup.bat](setup.bat) file. A new file will be created. You will only have to launch it.
 ㅤ
 
 ㅤ
