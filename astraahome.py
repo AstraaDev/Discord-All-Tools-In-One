@@ -36,7 +36,6 @@ from datetime import datetime
 from pypresence import Presence
 from discord import Webhook, AsyncWebhookAdapter
 
-os.system(f'title [Discord] All tools in One - Home')
 y = Fore.LIGHTYELLOW_EX
 b = Fore.LIGHTBLUE_EX
 w = Fore.LIGHTWHITE_EX
