@@ -49,7 +49,9 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 - [x] - [AutoLogin](https://github.com/AstraaDev/Discord-Token-AutoLogin)
 - [x] - [Nitro Generator]()
 - [x] - [Token Generator]()
-- [ ] - [BysPass Block]()
+- [x] - [HypeSquad House Changer]()
+- [x] - [Cycle ColorTheme]()
+- [x] - [WebHooks Remover]()
 
 ## How To Install
 
