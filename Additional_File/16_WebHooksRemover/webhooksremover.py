@@ -3,7 +3,6 @@ import requests
 from colorama import Fore
 
 def webhooksremover():
-    os.system(f'title WebHooks Remover - Made by Astraa')
     os.system('cls')
     webhooksremovertitle()
     try:
