@@ -16,16 +16,17 @@ class NitroGen:
         os.system('cls' if os.name == 'nt' else 'clear') 
         if os.name == "nt":
             print("")
-            ctypes.windll.kernel32.SetConsoleTitleW("Nitro Generator and Checker - Made by Astraa")
+            os.system(f'title Nitro Generator and Checker - Made by Astraa')
         else: 
             print(f'\33]0;Nitro Generator and Checker - Made by Astraa\a', end='', flush=True) 
 
-        nitrogen()
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Input How Many Codes to Generate and Check: """)
-        num = int(input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Number of generation: """))
+        os.system('cls')
+        nitrogentitle()
+        print(f"""{y}[{w}#{y}]{w} Input How Many Codes to Generate and Check: """)
+        num = int(input(f"""{y}[{b}#{y}]{w} Number of generation: """))
 
-        print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Do you wish to use a discord webhook? - [If so type it here or press enter to ignore]""")
-        url = input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } WebHook: """)
+        print(f"""\n{y}[{w}+{y}]{w} Do you wish to use a discord webhook? - [If so type it here or press enter to ignore]""")
+        url = input(f"""{y}[{b}#{y}]{w} WebHook: """)
         time.sleep(1)
         os.system('cls')
         webhook = url if url != "" else None 
@@ -47,7 +48,7 @@ class NitroGen:
                 else:
                     invalid += 1
             except Exception as e:
-                print(f"{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Error : {url} ")
+                print(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} Error : {url} ")
 
             if os.name == "nt":
                 ctypes.windll.kernel32.SetConsoleTitleW(f"Nitro Generator and Checker - {len(valid)} Valid | {invalid} Invalid - Made by Astraa")
@@ -56,16 +57,17 @@ class NitroGen:
                 print(f'\33]0;Nitro Generator and Checker - {len(valid)} Valid | {invalid} Invalid - Made by Astraa\a', end='', flush=True)
 
         print(f"""\n
-{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Results:\n
-          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTGREEN_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Valid: {len(valid)}
-          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Invalid: {invalid}
-          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Valid Codes: {', '.join(valid )}""")
+{y}[{b}+{y}]{w} Results:\n
+          {y}[{Fore.LIGHTGREEN_EX }!{y}]{w} Valid: {len(valid)}
+          {y}[{Fore.LIGHTRED_EX }!{y}]{w} Invalid: {invalid}
+          {y}[{w}!{y}]{w} Valid Codes: {', '.join(valid )}""")
 
-        input(f"""\n\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Press ENTER to exit""")
+        input(f"""\n\n{y}[{b}#{y}]{w} Press ENTER to exit""")
+        main()
 
     def generator(self, amount):
         with open(self.fileName, "w", encoding="utf-8") as file:
-            print(f"{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Wait, Generating for you")
+            print(f"{y}[{b}#{y}]{w} Wait, Generating for you")
 
             start = time.time()
 
