@@ -2,7 +2,7 @@
   <img src="https://i.discord.fr/PSS.png">
 </p>
 
-<h1 align="center">[Discord] - All Tools In One</h1>
+<h1 align="center">[Discord] - All Tools In One (V2.0)</h1>
 <p align="center">
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-important">
@@ -25,7 +25,6 @@
 </p>
 
 <p align="center">
-  V2.0 IS HERE !
   [Discord] - All Tools In One is a Script Gathering for Windows/MacOS/Linux systems written in Python.
 </p>
 
