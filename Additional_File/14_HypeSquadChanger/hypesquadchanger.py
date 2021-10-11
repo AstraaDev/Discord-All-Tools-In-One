@@ -3,7 +3,6 @@ import requests
 from colorama import Fore
 
 def hypesquadchanger():
-    os.system(f'title HypeSquad Changer - Made by Astraa')
     os.system('cls')
     hypesquadchangertitle()
     print(f"""{y}[{b}#{y}]{w} Which house do you want to be part of: \n\n""")
