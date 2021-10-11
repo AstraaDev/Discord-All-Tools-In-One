@@ -8,7 +8,6 @@ from datetime import datetime
 from colorama import Fore
 
 def tokeninfo():
-    os.system(f'title Token Informtions - Made by Astraa')
     os.system('cls')
     tokeninfotitle()
     print(f"""{y}[{Fore.LIGHTBLUE_EX }#{y}]{w} You can find: \n\n""")
