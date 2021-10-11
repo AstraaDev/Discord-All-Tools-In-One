@@ -21,8 +21,11 @@ import aiohttp
 import asyncio
 from colorama import Fore, init
 from dhooks import Webhook
+from tkinter import *
+import tkinter.font as font
 from selenium import webdriver
 from PIL import Image
+from itertools import cycle
 from bs4 import BeautifulSoup
 import requests as req
 from threading import Thread as thr
@@ -33,176 +36,195 @@ from datetime import datetime
 from pypresence import Presence
 from discord import Webhook, AsyncWebhookAdapter
 
-ctypes.windll.kernel32.SetConsoleTitleW("[Discord] All tools in One - Home")
+os.system(f'title [Discord] All tools in One - Home')
 y = Fore.LIGHTYELLOW_EX
 b = Fore.LIGHTBLUE_EX
+w = Fore.LIGHTWHITE_EX
 
 def Spinner():
 	l = ['|', '/', '-', '\\']
 	for i in l+l+l:
-		sys.stdout.write(f"""\r{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Loading... {i}""")
+		sys.stdout.write(f"""\r{y}[{b}#{y}]{w} Loading... {i}""")
 		sys.stdout.flush()
 		time.sleep(0.2)
 
-def astraahome():
+def astraahometitle():
     print(f"""\n\n                   {b}█████{y}╗ {b}███████{y}╗{b}████████{y}╗{b}██████{y}╗  {b}█████{y}╗  {b}█████{y}╗ {b}██{y}╗  {b}██{y}╗ {b}██████{y}╗ {b}███{y}╗   {b}███{y}╗{b}███████{y}╗""")
     print(f"""                  {b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝╚══{b}██{y}╔══╝{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}║  {b}██{y}║{b}██{y}╔═══{b}██{y}╗{b}████{y}╗ {b}████{y}║{b}██{y}╔════╝""")
     print(f"""                  {b}███████{y}║{b}███████{y}╗   {b}██{y}║   {b}██████{y}╔╝{b}███████{y}║{b}███████{y}║{b}███████{y}║{b}██{y}║   {b}██{y}║{b}██{y}╔{b}████{y}╔{b}██{y}║{b}█████{y}╗  """)
     print(f"""                  {b}██{y}╔══{b}██{y}║╚════{b}██{y}║   {b}██{y}║   {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}║{b}██{y}╔══{b}██{y}║{b}██{y}╔══{b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}║╚{b}██{y}╔╝{b}██{y}║{b}██{y}╔══╝  """)
     print(f"""                  {b}██{y}║  {b}██{y}║{b}███████{y}║   {b}██{y}║   {b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}║╚{b}██████{y}╔╝{b}██{y}║ ╚═╝ {b}██{y}║{b}███████{y}╗""")
     print(f"""                  ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
-                       
-def blockbypass():
-    print(f"""\n\n                {b}██████{y}╗ {b}██{y}╗      {b}██████{y}╗  {b}██████{y}╗{b}██{y}╗  {b}██{y}╗{b}██████{y}╗ {b}██{y}╗   {b}██{y}╗{b}██████{y}╗  {b}█████{y}╗ {b}███████{y}╗{b}███████{y}╗""")
-    print(f"""                {b}██{y}╔══{b}██{y}{b}╗██{y}║     {b}██{y}╔═══{b}██{y}╗{b}██{y}╔════╝{b}██{y}║ {b}██{y}╔╝{b}██{y}╔══{b}██{y}╗╚{b}██{y}╗ {b}██{y}╔╝{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}██{y}╔════╝""")
-    print(f"""                {b}██████{y}╔╝{b}██{y}║     {b}██{y}║   {b}██{y}║{b}██{y}║     {b}█████{y}╔╝ {b}██████{y}╔╝ ╚{b}████{y}╔╝ {b}██████{y}╔╝{b}███████{y}║{b}███████{y}╗{b}███████{y}╗""")
-    print(f"""                {b}██{y}╔══{b}██{y}╗{b}██{y}║     {b}██{y}║   {b}██{y}║{b}██{y}║     {b}██{y}╔═{b}██{y}╗ {b}██{y}╔══{b}██{y}╗  ╚{b}██{y}╔╝  {b}██{y}╔═══╝ {b}██{y}╔══{b}██{y}║╚════{b}██{y}║╚═══{b}═██{y}║""")
-    print(f"""                {b}██████{y}╔╝{b}███████{y}╗╚{b}██████{y}╔╝╚{b}██████{y}╗{b}██{y}║  {b}██{y}╗{b}██████{y}╔╝   {b}██{y}║   {b}██{y}║     {b}██{y}║  {b}██{y}║{b}███████{y}║{b}███████{y}║""")
-    print(f"""                ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═════╝    ╚═╝   ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def tokengen():
+def webhooksremovertitle():
+    print(f"""\n                               {b}██████{y}╗ {b}███████{y}╗{b}███{y}╗   {b}███{y}╗ {b}██████{y}╗ {b}██{y}╗   {b}██{y}╗{b}███████{y}╗{b}██████{y}╗ """)
+    print(f"""                               {b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}████{y}╗ {b}████{y}║{b}██{y}╔═══{b}██{y}╗{b}██{y}║   {b}██{y}║{b}██{y}╔════╝{b}██{y}╔══{b}██{y}╗""")
+    print(f"""                               {b}██████{y}╔╝{b}█████{y}╗  {b}██{y}╔{b}████{y}╔{b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}║   {b}██{y}║{b}█████{y}╗  {b}██████{y}╔╝""")
+    print(f"""                               {b}██{y}╔══{b}██{y}╗{b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╔╝{b}██{y}║{b}██{y}║   {b}██{y}║╚{b}██{y}╗ {b}██{y}╔╝{b}██{y}╔══╝  {b}██{y}╔══{b}██{y}╗""")
+    print(f"""                               {b}██{y}║  {b}██{y}║{b}███████{y}╗{b}██{y}║ ╚═╝ {b}██{y}║╚{b}██████{y}╔╝ ╚{b}████{y}╔╝ {b}███████{y}╗{b}██{y}║  {b}██{y}║""")
+    print(f"""                               ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
+
+def cyclecolorthemetitle():
+    print(f"""\n                   {b}██████{y}╗{b}██{y}╗   {b}██{y}╗ {b}██████{y}╗{b}██{y}╗     {b}███████{y}╗    {b}████████{y}╗{b}██{y}╗  {b}██{y}╗{b}███████{y}╗{b}███{y}╗   {b}███{y}╗{b}███████{y}╗""")
+    print(f"""                  {b}██{y}╔════╝╚{b}██{y}╗ {b}██{y}╔╝{b}██{y}╔════╝{b}██{y}║     {b}██{y}╔════╝    ╚══{b}██{y}╔══╝{b}██{y}║  {b}██{y}║{b}██{y}╔════╝{b}████{y}╗ {b}████{y}║{b}██{y}╔════╝""")
+    print(f"""                  {b}██{y}║      ╚{b}████{y}╔╝ {b}██{y}║     {b}██{y}║     {b}█████{y}╗         {b}██{y}║   {b}███████{y}║{b}█████{y}╗  {b}██{y}╔{b}████{y}╔{b}██{y}║{b}█████{y}╗  """)
+    print(f"""                  {b}██{y}║       ╚{b}██{y}╔╝  {b}██{y}║     {b}██{y}║     {b}██{y}╔══╝         {b}██{y}║   {b}██{y}╔══{b}██{y}║{b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╔╝{b}██{y}║{b}██{y}╔══╝  """)
+    print(f"""                  ╚{b}██████{y}╗   {b}██{y}║   ╚{b}██████{y}╗{b}███████{y}╗{b}███████{y}╗       {b}██{y}║   {b}██{y}║  {b}██{y}║{b}███████{y}╗{b}██{y}║ ╚═╝ {b}██{y}║{b}███████{y}╗""")
+    print(f"""                   ╚═════╝   ╚═╝    ╚═════╝╚══════╝╚══════╝       ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
+
+def hypesquadchangertitle():
+    print(f"""\n                         {b}██{y}╗  {b}██{y}╗{b}██{y}╗   {b}██{y}╗{b}██████{y}╗ {b}███████{y}╗{b}███████{y}╗ {b}██████{y}╗ {b}██{y}╗   {b}██{y}╗ {b}█████{y}╗ {b}██████{y}╗ """)
+    print(f"""                         {b}██{y}║  {b}██{y}║╚{b}██{y}╗ {b}██{y}╔╝{b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}██{y}╔════╝{b}██{y}╔═══{b}██{y}╗{b}██{y}║   {b}██{y}║{b}██{y}╔══{b}██{y}{y}╗{b}██{y}╔══{b}██{y}╗""")
+    print(f"""                         {b}███████{y}║ ╚{b}████{y}╔╝ {b}██████{y}╔╝{b}█████{y}╗  {b}███████{y}╗{b}██{y}║   {b}██{y}║{b}██{y}║   {b}██{y}║{b}███████{y}║{b}██{y}║  {b}██{y}║""")
+    print(f"""                         {b}██{y}╔══{b}██{y}║  ╚{b}██{y}╔╝  {b}██{y}╔═══╝ {b}██{y}╔══╝  ╚════{b}██{y}║{b}██{y}║{b}▄▄ ██{y}║{b}██{y}║   {b}██{y}║{b}██{y}╔══{b}██{y}║{b}██{y}║  {b}██{y}║""")
+    print(f"""                         {b}██{y}║  {b}██{y}║   {b}██{y}║   {b}██{y}║     {b}███████{y}╗{b}███████{y}║╚{b}██████{y}╔╝╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}║{b}██████{y}╔╝""")
+    print(f"""                         ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚══════╝ ╚══{b}▀▀{y}═╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
+                                                                                                                    
+def tokengentitle():
     print(f"""\n                        {b}████████{y}╗ {b}██████{y}╗ {b}██{y}╗  {b}██{y}╗{b}███████{y}╗{b}███{y}╗   {b}██{y}╗ {b}██████{y}╗ {b}███████{y}╗{b}███{y}╗   {b}██{y}╗""")
     print(f"""                        {y}╚══{b}██{y}╔══╝{b}██{y}╔═══{b}██{y}╗{b}██{y}║ {b}██{y}╔╝{b}██{y}╔════╝{b}████{y}╗  {b}██{y}║{b}██{y}╔════╝ {b}██{y}╔════╝{b}████{y}╗  {b}██{y}║""")
     print(f"""                           {b}██{y}║   {b}██{y}║   {b}██{y}║{b}█████{y}╔╝ {b}█████{y}╗  {b}██{y}╔{b}██{y}╗ {b}██{y}║{b}██{y}║  {b}███{y}╗{b}█████{y}╗  {b}██{y}╔{b}██{y}╗ {b}██{y}║""")
     print(f"""                          {b} ██{y}║   {b}██{y}║   {b}██{y}║{b}██{y}╔═{b}██{y}╗ {b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╗{b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╗{b}██{y}║""")
     print(f"""                           {b}██{y}║   ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}╗{b}███████{y}╗{b}██{y}║ ╚{b}████{y}║╚{b}██████{y}╔╝{b}███████{y}╗{b}██{y}║ ╚{b}████{y}║""")
     print(f"""                           ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def nitrogen():
+def nitrogentitle():
     print(f"""\n                           {b}███{y}╗   {b}██{y}╗{b}██{y}╗{b}████████{y}╗{b}██████{y}╗  {b}██████{y}╗ {b} ██████{y}╗ {b}███████{y}╗{b}███{y}╗   {b}██{y}╗""")
     print(f"""                           {b}████{y}╗  {b}██{y}║{b}██{y}║╚══{b}██{y}╔══╝{b}██{y}╔══{b}██{y}╗{b}██{y}╔═══{b}██{y}╗{b}██{y}╔════╝ {b}██{y}╔════╝{b}████{y}╗  {b}██{y}║""")
     print(f"""                           {b}██{y}╔{b}██{y}╗ {b}██{y}║{b}██{y}║   {b}██{y}║   {b}██████{y}╔╝{b}██{y}║   {b}██{y}║{b}██{y}║  {b}███{y}╗{b}█████{y}╗  {b}██{y}╔{b}██{y}╗ {b}██{y}║""")
     print(f"""                           {b}██{y}║╚{b}██{y}╗{b}██{y}║{b}██{y}║   {b}██{y}║   {b}██{y}╔══{b}██{y}╗{b}██{y}║   {b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╗{b}██{y}║""")
     print(f"""                           {b}██{y}║ ╚{b}████{y}║{b}██{y}║   {b}██{y}║   {b}██{y}║  {b}██{y}║╚{b}██████{y}╔╝╚{b}██████{y}╔╝{b}███████{y}╗{b}██{y}║ ╚{b}████{y}║""")
     print(f"""                           ╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def autologin():
+def autologintitle():
     print(f"""\n\n                         {b}█████{y}╗ {b}██{y}╗   {b}██{y}╗{b}████████{y}╗ {b}██████{y}╗ {b}██{y}╗      {b}██████{y}╗  {b}██████{y}╗ {b}██{y}╗{b}███{y}╗   {b}██{y}╗""")
     print(f"""                        {b}██{y}╔══{b}██{y}╗{b}██{y}║   {b}██{y}║╚══{b}██{y}╔══╝{b}██{y}╔═══{b}██{y}╗{b}██{y}║     {b}██{y}╔═══{b}██{y}╗{b}██{y}╔════╝ {b}██{y}║{b}████{y}╗  {b}██{y}║""")
     print(f"""                        {b}███████{y}║{b}██{y}║   {b}██{y}║   {b}██{y}║   {b}██{y}║   {b}██{y}║{b}██{y}║     {b}██{y}║   {b}██{y}║{b}██{y}║  {b}███{y}╗{b}██{y}║{b}██{y}╔{b}██{y}╗ {b}██{y}║""")
     print(f"""                        {b}██{y}╔══{b}██{y}║{b}██{y}║   {b}██{y}║   {b}██{y}║   {b}██{y}║   {b}██{y}║{b}██{y}║     {b}██{y}║   {b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}║{b}██{y}║╚{b}██{y}╗{b}██{y}║""")
     print(f"""                        {b}██{y}║  {b}██{y}║╚{b}██████{y}╔╝   {b}██{y}║   ╚{b}██████{y}╔╝{b}███████{y}╗╚{b}██████{y}╔╝╚{b}██████{y}╔╝{b}██{y}║{b}██{y}║ ╚{b}████{y}║""")
     print(f"""                        ╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def tokeninfo():
+def tokeninfotitle():
     print(f"""\n\n                        {b}████████{y}╗ {b}██████{y}╗ {b}██{y}╗  {b}██{y}╗{b}███████{y}╗{b}███{y}╗   {b}██{y}╗{b}██{y}╗{b}███{y}╗   {b}██{y}╗{b}███████{y}╗ {b}██████{y}╗ """)
     print(f"""                        {y}╚══{b}██{y}╔══╝{b}██{y}╔═══{b}██{y}╗{b}██{y}║ {b}██{y}╔╝{b}██{y}╔════╝{b}████{y}╗  {b}██{y}║{b}██{y}║{b}████{y}╗  {b}██{y}║{b}██{y}╔════╝{b}██{y}╔═══{b}██{y}╗""")
     print(f"""                           {b}██{y}║   {b}██{y}║   {b}██{y}║{b}█████{y}╔╝ {b}█████{y}╗  {b}██{y}╔{b}██{y}╗ {b}██{y}║{b}██{y}║{b}██{y}╔{b}██{y}╗ {b}██{y}║{b}█████{y}╗  {b}██{y}║   {b}██{y}║""")
     print(f"""                           {b}██{y}║   {b}██{y}║   {b}██{y}║{b}██{y}╔═{b}██{y}╗ {b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╗{b}██{y}║{b}██{y}║{b}██{y}║╚{b}██{y}╗{b}██{y}║{b}██{y}╔══╝  {b}██{y}║   {b}██{y}║""")
     print(f"""                           {b}██{y}║   ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}╗{b}███████{y}╗{b}██{y}║ ╚{b}████{y}║{b}██{y}║{b}██{y}║ ╚{b}████{y}║{b}██{y}║     {y}╚{b}██████{y}╔╝""")
     print(f"""                           ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝ \n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def tokenrape():
+def tokenrapetitle():
     print(f"""\n\n                     {b}████████{y}╗ {b}██████{y}╗ {b}██{y}╗  {b}██{y}╗{b}███████{y}╗{b}███{y}╗   {b}██{y}╗{b}██████{y}╗  {b}█████{y}╗ {b}██████{y}╗ {b}███████{y}╗""")
     print(f"""                     {y}╚══{b}██{y}╔══╝{b}██{y}╔═══{b}██{y}╗{b}██{y}║ {b}██{y}╔╝{b}██{y}╔════╝{b}████{y}╗  {b}██{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝""")
     print(f"""                        {b}██{y}║   {b}██{y}║   {b}██{y}║{b}█████{y}╔╝ {b}█████{y}╗  {b}██{y}╔{b}██{y}╗ {b}██{y}║{b}██████{y}╔╝{b}███████{y}║{b}██████{y}╔╝{b}█████{y}╗  """)
     print(f"""                        {b}██{y}║   {b}██{y}║   {b}██{y}║{b}██{y}╔═{b}██{y}╗ {b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╗{b}██{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}║{b}██{y}╔═══╝ {b}██{y}╔══╝  """)
     print(f"""                        {b}██{y}║   ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}╗{b}███████{y}╗{b}██{y}║ ╚{b}████{y}║{b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}║{b}██{y}║     {b}███████{y}╗""")
     print(f"""                        ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚══════╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def brutforce():
+def brutforcetitle():
     print(f"""\n\n                        {b}██████{y}╗ {b}██████{y}╗ {b}██{y}╗   {b}██{y}╗{b}████████{y}╗{b}███████{y}╗ {b}██████{y}╗ {b}██████{y}╗  {b}██████{y}╗{b}███████{y}╗""")
     print(f"""                        {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}║   {b}██{y}║╚══{b}██{y}╔══╝{b}██{y}╔════╝{b}██{y}╔═══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}██{y}╔════╝""")
     print(f"""                        {b}██████{y}╔╝{b}██████{y}╔╝{b}██{y}║   {b}██{y}║   {b}██{y}║   {b}█████{y}╗  {b}██{y}║   {b}██{y}║{b}██████{y}╔╝{b}██{y}║     {b}█████{y}╗  """)
     print(f"""                        {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}║   {b}██{y}║   {b}██{y}║   {b}██{y}╔══╝  {b}██{y}║   {b}██{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}║     {b}██{y}╔══╝  """)
     print(f"""                        {b}██████{y}╔╝{b}██{y}║  {b}██{y}║╚{b}██████{y}╔╝   {b}██{y}║   {b}██{y}║     ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}║╚{b}██████{y}╗{b}███████{y}╗""")
     print(f"""                        ╚═════╝ ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def fakeqr():
+def fakeqrtitle():
     print(f"""\n\n                                   {b}███████{y}╗ {b}█████{y}╗ {b}██{y}╗  {b}██{y}╗{b}███████{y}╗     {b}██████{y}╗ {b}██████{y}╗ """)
     print(f"""                                   {b}██{y}╔════╝{b}██{y}╔══{b}██{y}╗{b}██{y}║ {b}██{y}╔╝{b}██{y}╔════╝    {b}██{y}╔═══{b}██{y}╗{b}██{y}╔══{b}██{y}╗""")
     print(f"""                                   {b}█████{y}╗  {b}███████{y}║{b}█████{y}╔╝ {b}█████{y}╗      {b}██{y}║   {b}██{y}║{b}██████{y}╔╝""")
     print(f"""                                   {b}██{y}╔══╝  {b}██{y}╔══{b}██{y}║{b}██{y}╔═{b}██{y}╗ {b}██{y}╔══╝      {b}██{y}║{b}▄▄ ██{y}║{b}██{y}╔══{b}██{y}╗""")
     print(f"""                                   {b}██{y}║     {b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}╗{b}███████{y}╗    ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}║""")
     print(f"""                                   ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝     ╚══{b}▀▀{y}═╝ ╚═╝  ╚═╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def tokengrabber():
+def tokengrabbertitle():
     print(f"""\n\n         {b}████████{y}╗ {b}██████{y}╗ {b}██{y}╗ {b}███{y}╗{b}███████{y}╗{b}███{y}╗   {b}██{y}╗     {b}██████{y}╗ {b}██████{y}╗  {b}█████{y}╗ {b}██████{y}╗ {b}██████{y}╗ {b}███████{y}╗{b}██████{y}╗ """)
     print(f"""         {y}╚══{b}██{y}╔══╝{b}██{y}╔═══{b}██{y}╗{b}██{y}║ {b}██{y}╔╝{b}██{y}╔════╝{b}████{y}╗  {b}██{y}║    {b}██{y}╔════╝ {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}██{y}╔══{b}██{y}╗""")
     print(f"""            {b}██{y}║   {b}██{y}║   {b}██{y}║{b}█████{y}╔╝ {b}█████{y}╗  {b}██{y}╔{b}██{y}╗ {b}██{y}║    {b}██{y}║  {b}███{y}╗{b}██████{y}╔╝{b}███████{y}║{b}██████{y}╔╝{b}██████{y}╔╝{b}█████{y}╗  {b}██████{y}╔╝""")
     print(f"""            {b}██{y}║   {b}██{y}║   {b}██{y}║{b}██{y}╔═{b}██{y}╗ {b}██{y}╔══╝  {b}██{y}║╚{b}██{y}╗{b}██{y}║    {b}██{y}║   {b}██{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔══╝  {b}██{y}╔══{b}██{y}╗""")
     print(f"""            {b}██{y}║   ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}╗{b}███████{y}╗{b}██{y}║ ╚{b}████{y}║    ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}║{b}██████{y}╔╝{b}██████{y}╔╝{b}███████{y}╗{b}██{y}║  {b}██{y}║""")
     print(f"""            ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def webhookspam():
+def webhookspamtitle():
     print(f"""\n\n            {b}██{y}╗    {b}██{y}╗{b}███████{y}╗{b}██████{y}╗ {b}██{y}╗  {b}██{y}╗ {b}██████{y}╗  {b}██████{y}╗{b} ██{y}╗  {b}██{y}╗    {b}███████{y}╗{b}██████{y}╗  {b}█████{y}╗ {b}███{y}╗   {b}███{y}╗""")
     print(f"""            {b}██{y}║    {b}██{y}║{b}██{y}╔════╝{b}██{y}╔══{b}██{y}╗{b}██{y}║  {b}██{y}║{b}██{y}╔═══{b}██{y}╗{b}██{y}╔═══{b}██{y}╗{b}██{y}║ {b}██{y}╔╝    {b}██{y}╔════╝{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}████{y}╗ {b}████{y}║""")
     print(f"""            {b}██{y}║ {b}█{y}╗ {b}██{y}║{b}█████{y}╗  {b}██████{y}╔╝{b}███████{y}║{b}██{y}║   {b}██{y}║{b}██{y}║   {b}██{y}║{b}█████{y}╔╝     {b}███████{y}╗{b}██████{y}╔╝{b}███████{y}║{b}██{y}╔{b}████{y}╔{b}██{y}║""")
     print(f"""           {b} ██{y}║{b}███{y}╗{b}██{y}║{b}██{y}╔══╝  {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}║   {b}██{y}║{b}██{y}╔═{b}██{y}╗     ╚════{b}██{y}║{b}██{y}╔═══╝ {b}██{y}╔══{b}██{y}║{b}██{y}║╚{b}██{y}╔╝{b}██{y}║""")
     print(f"""            {y}╚{b}███{y}╔{b}███{y}╔╝{b}███████{y}╗{b}██████{y}╔╝{b}██{y}║  {b}██{y}║╚{b}██████{y}╔╝╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}╗    {b}███████{y}║{b}██{y}║     {b}██{y}║  {b}██{y}║{b}██{y}║ ╚═╝ {b}██{y}║""")
     print(f"""             ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝    ╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝\n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def massreport():
+def massreporttitle():
     print(f"""\n\n                  {b}███{y}╗   {b}███{y}╗ {b}█████{y}╗ {b}███████{y}╗{b}███████{y}╗    {b}██████{y}╗ {b}███████{y}╗{b}██████{y}╗  {b}██████{y}╗ {b}██████{y}╗ {b}████████{y}╗""")
     print(f"""                 {b} ████{y}╗ {b}████{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}██{y}╔════╝    {b}██{y}╔══{b}██{y}╗{b}██{y}╔════╝{b}██{y}╔══{b}██{y}╗{b}██{y}╔═══{b}██{y}╗{b}██{y}╔══{b}██{y}╗╚══{b}██{y}╔══╝""")
     print(f"""                  {b}██{y}╔{b}████{y}╔{b}██{y}║{b}███████{y}║{b}███████{y}╗{b}███████{y}╗    {b}██████{y}╔╝{b}█████{y}╗  {b}██████{y}╔╝{b}██{y}║   {b}██{y}║{b}██████{y}╔╝   {b}██{y}║   """)
     print(f"""                  {b}██{y}║╚{b}██{y}╔╝{b}██{y}║{b}██{y}╔══{b}██{y}║╚════{b}██{y}║╚════{b}██{y}║    {b}██{y}╔══{b}██{y}╗{b}██{y}╔══╝  {b}██{y}╔═══╝ {b}██{y}║   {b}██{y}║{b}██{y}╔══{b}██{y}╗   {b}██{y}║   """)
     print(f"""                 {b} ██{y}║ ╚═╝ {b}██{y}║{b}██{y}║  {b}██{y}║{b}███████{y}║{b}███████{y}║    {b}██{y}║  {b}██{y}║{b}███████{y}╗{b}██{y}║     ╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}║   {b}██{y}║   """)
     print(f"""                  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   \n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
-def discordrat():
+def discordrattitle():
     print(f"""\n\n                    {b}██████{y}╗ {b}██{y}╗{b}███████{y}╗ {b}██████{y}╗ {b}██████{y}╗ {b}██████{y}╗ {b}██████{y}╗     {b}██████{y}╗  {b}█████{y}╗ {b}████████{y}╗""")
     print(f"""                    {b}██{y}╔══{b}██{y}╗{b}██{y}║{b}██{y}╔════╝{b}██{y}╔════╝{b}██{y}╔═══{b}██{y}╗{b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗    {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}╗╚══{b}██{y}╔══╝""")
     print(f"""                    {b}██{y}║  {b}██{y}║{b}██{y}║{b}███████{y}╗{b}██{y}║     {b}██{y}║   {b}██{y}║{b}██████{y}╔╝{b}██{y}║  {b}██{y}║    {b}██████{y}╔╝{b}███████{y}║   {b}██{y}║   """)
     print(f"""                    {b}██{y}║  {b}██{y}║{b}██{y}║╚════{b}██{y}║{b}██{y}║     {b}██{y}║   {b}██{y}║{b}██{y}╔══{b}██{y}╗{b}██{y}║  {b}██{y}║    {b}██{y}╔══{b}██{y}╗{b}██{y}╔══{b}██{y}║   {b}██{y}║   """)
     print(f"""                    {b}██████{y}╔╝{b}██{y}║{b}███████{y}║╚{b}██████{y}╗╚{b}██████{y}╔╝{b}██{y}║  {b}██{y}║{b}██████{y}╔╝    {b}██{y}║  {b}██{y}║{b}██{y}║  {b}██{y}║   {b}██{y}║   """)
     print(f"""                    ╚═════╝ ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   \n""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------""")
-    print(f"""{Fore.LIGHTWHITE_EX }ev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://astraadev.club/ {Fore.LIGHTBLUE_EX }|{Fore.LIGHTWHITE_EX } http://as""")
-    print(f"""{Fore.LIGHTYELLOW_EX }------------------------------------------------------------------------------------------------------------------------\n""")
-
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------""")
+    print(f"""{w}ev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://astraadev.club/ {b}|{w} http://as""")
+    print(f"""{y}------------------------------------------------------------------------------------------------------------------------\n""")
 
 def main():
     os.system('cls')
-    Spinner()
-    os.system('cls')
-    astraahome()
-    print(f"""        {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Main Options:          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token Options:          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Gen/Checker Options:        {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Other Options:\n""")
-    print(f"""            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }01{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } RAT Tool              {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }06{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token Grabber          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }12{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Nitro                      {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }14{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } ByPass Block\n""")
-    print(f"""            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }02{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Raid Tool             {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }07{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } FakeQrCode             {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }13{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token                      {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }15{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Credits\n""")
-    print(f"""            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }03{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } VideoCrash Maker      {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }08{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token BrutForce                                        {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }16{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Exit\n""")
-    print(f"""            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }04{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Massive Report        {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }09{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token Rape\n""")
-    print(f"""            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }05{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } WebHooks Spam         {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }10{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token Informations\n""")
-    print(f"""                                       {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }11{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } AutoLogin\n\n""")
+    astraahometitle()
+    print(f"""        {y}[{b}+{y}]{w} Main Options:          {y}[{b}+{y}]{w} Token Options:          {y}[{b}+{y}]{w} Gen/Checker Options:      {y}[{b}+{y}]{w} Basic Options:\n""")
+    print(f"""            {y}[{w}01{y}]{w} RAT Tool              {y}[{w}06{y}]{w} Token Grabber         {y}[{w}12{y}]{w} Nitro                     {y}[{w}14{y}]{w} HypeSquad Changer\n""")
+    print(f"""            {y}[{w}02{y}]{w} Raid Tool             {y}[{w}07{y}]{w} FakeQrCode            {y}[{w}13{y}]{w} Token                     {y}[{w}15{y}]{w} Cycle Color Theme\n""")
+    print(f"""            {y}[{w}03{y}]{w} VideoCrash Maker      {y}[{w}08{y}]{w} Token BrutForce                                      {y}[{w}16{y}]{w} WebHooks Remover\n""")
+    print(f"""            {y}[{w}04{y}]{w} Massive Report        {y}[{w}09{y}]{w} Token Rape\n""")
+    print(f"""            {y}[{w}05{y}]{w} WebHooks Spam         {y}[{w}10{y}]{w} Token Informations\n""")
+    print(f"""                                       {y}[{w}11{y}]{w} AutoLogin\n\n                                                                                                         {y}[{b}>{y}]{w} Next Page""")
     global choice
-    choice = input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Choice: """)
-
+    choice = input(f"""{y}[{b}#{y}]{w} Choice: """)
 
     if choice == '1' or choice == '01':
         os.system('cls')
@@ -288,48 +310,72 @@ def main():
         os.system('cls')
         Spinner()
         os.system('cls')
-        exec(open('Additional_File/14_ByPassBlock/blockbypass.py').read())
+        exec(open('Additional_File/14_HypeSquadChanger/hypesquadchanger.py').read())
         
     elif choice == '15':
         os.system('cls')
         Spinner()
         os.system('cls')
-        astraahome()
-        print(f"""                                            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Development Networks:\n""")
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } GitHub:    @AstraaDev""")
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } WebSite:   astraadev.club""")
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Server:    discord.gg/pUZrFnabvd\n\n""")
-        print(f"""                                            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Other Networks:\n""")
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Twitter:   @AstraaDev""")
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Discord:   Astraa#4589""")
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Insta:     @astraaftn\n\n\n""")
-        input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTBLUE_EX } Press ENTER to exit""")
-        sys.exit()
+        exec(open('Additional_File/15_CycleColorTheme/cyclecolortheme.py').read())
             
     elif choice == '16':
         os.system('cls')
         Spinner()
         os.system('cls')
-        astraahome()
-        print(f"""                                                {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }❤{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Have a good day :)""")
-        print(f"""{Fore.LIGHTRED_EX }
-                                              ,ad8PPPP88b,     ,d88PPPP8ba,
-                                             d8P"      "Y8b, ,d8P"      "Y8b
-                                            dP'           "8a8"           `Yd
-                                            8(              "              )8
-                                            I8                             8I
-                                             Yb,                         ,dP
-                                              "8a,                     ,a8"
-                                                "8a,                 ,a8"
-                                                  "Yba             adP"
-                                                    `Y8a         a8P'
-                                                      `88,     ,88'
-                                                        "8b   d8"
-                                                         "8b d8"
-                                                          `888'""")
-        time.sleep(3)
-        sys.exit()
+        exec(open('Additional_File/16_WebHooksRemover/webhooksremover.py').read())
+    
+    elif choice == '>':
+        os.system('cls')
+        astraahometitle()
+        print(f"""        {y}[{b}+{y}]{w} Other Options:\n""")
+        print(f"""            {y}[{w}17{y}]{w} Credits\n""")
+        print(f"""            {y}[{w}18{y}]{w} Exit\n\n\n\n\n\n\n\n\n\n                                                                                                     {y}[{b}<{y}]{w} Previous Page""")
+        choice = input(f"""{y}[{b}#{y}]{w} Choice: """)
 
+        if choice == '17':
+            os.system('cls')
+            Spinner()
+            os.system('cls')
+            astraahometitle()
+            print(f"""                                            {y}[{b}+{y}]{w} Development Networks:\n""")
+            print(f"""                                                {y}[{w}#{y}]{w} GitHub:    @AstraaDev""")
+            print(f"""                                                {y}[{w}#{y}]{w} WebSite:   astraadev.club""")
+            print(f"""                                                {y}[{w}#{y}]{w} Server:    discord.gg/pUZrFnabvd\n\n""")
+            print(f"""                                            {y}[{b}+{y}]{w} Other Networks:\n""")
+            print(f"""                                                {y}[{w}#{y}]{w} Twitter:   @AstraaDev""")
+            print(f"""                                                {y}[{w}#{y}]{w} Discord:   Astraa#4589""")
+            print(f"""                                                {y}[{w}#{y}]{w} Insta:     @astraaftn\n\n\n""")
+            input(f"""{y}[{w}#{y}]{w} Press ENTER to exit""")
+            sys.exit()
+        elif choice == '18':
+            os.system('cls')
+            Spinner()
+            os.system('cls')
+            astraahometitle()
+            print(f"""                                                {y}[{b}❤{y}]{w} Have a good day :)""")
+            print(f"""{Fore.LIGHTRED_EX }
+                                                  ,ad8PPPP88b,     ,d88PPPP8ba,
+                                                 d8P"      "Y8b, ,d8P"      "Y8b
+                                                dP'           "8a8"           `Yd
+                                                8(              "              )8
+                                                I8                             8I
+                                                 Yb,                         ,dP
+                                                  "8a,                     ,a8"
+                                                    "8a,                 ,a8"
+                                                      "Yba             adP"
+                                                        `Y8a         a8P'
+                                                          `88,     ,88'
+                                                            "8b   d8"
+                                                             "8b d8"
+                                                              `888'""")
+            time.sleep(3)
+            sys.exit()
+        elif choice == '<':
+            os.system('cls')
+            main()    
+        else:
+            os.system('cls')
+            main()
     else:
         os.system('cls')
         main()
