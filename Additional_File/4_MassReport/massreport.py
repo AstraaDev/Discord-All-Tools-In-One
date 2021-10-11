@@ -1,23 +1,25 @@
 import json, requests, time, threading, os, ctypes
+from tkinter.constants import W
 from colorama import Fore
 
-class Main:
+class massreport:
     def __init__(self):
-        ctypes.windll.kernel32.SetConsoleTitleW("Mass Report - Made by Astraa")
-        massreport()
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter the ID of the server where the message to be reported is located: """)
-        self.GUILD_ID = str(input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Guild ID: """))
-        print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter the ID of the channel in which the message to be reported is located: """)
-        self.CHANNEL_ID = str(input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Channel ID: """))
-        print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter the ID of the message to be reported: """)
-        self.MESSAGE_ID = str(input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Message ID: """))
-        print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Choose the reason for the report: """)
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }1{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Illegal content""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }2{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Harassment""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }3{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Spam or phishing links""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }4{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Self-harm""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }5{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } NSFW content\n""")
-        REASON = input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Choice: """)
+        os.system(f'title Mass Report - Made by Astraa')
+        os.system('cls')
+        massreporttitle()
+        print(f"""{y}[{w}+{y}]{w} Enter the ID of the server where the message to be reported is located: """)
+        self.GUILD_ID = str(input(f"""{y}[{b}#{y}]{w} Guild ID: """))
+        print(f"""\n{y}[{w}+{y}]{w} Enter the ID of the channel in which the message to be reported is located: """)
+        self.CHANNEL_ID = str(input(f"""{y}[{b}#{y}]{w} Channel ID: """))
+        print(f"""\n{y}[{w}+{y}]{W} Enter the ID of the message to be reported: """)
+        self.MESSAGE_ID = str(input(f"""{y}[{b}#{y}]{w} Message ID: """))
+        print(f"""\n{y}[{w}+{y}]{w} Choose the reason for the report: """)
+        print(f"""          {y}[{w}1{y}]{w} Illegal content""")
+        print(f"""          {y}[{w}2{y}]{w} Harassment""")
+        print(f"""          {y}[{w}3{y}]{w} Spam or phishing links""")
+        print(f"""          {y}[{w}4{y}]{w} Self-harm""")
+        print(f"""          {y}[{w}5{y}]{w} NSFW content\n""")
+        REASON = input(f"""{y}[{b}#{y}]{w} Choice: """)
 
         if REASON == '1':
             self.REASON = 0
@@ -30,14 +32,14 @@ class Main:
         elif REASON == '5':
             self.REASON = 4
         else:
-            print(f"""      {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Your request is invalid !""")
+            print(f"""      {y}[{Fore.LIGHTRED_EX }!{y}]{w} Your request is invalid !""")
             time.sleep(2)
-            exit(0)
+            main()
 
         self.RESPONSES = {f"""
-            401: Unauthorized: {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Invalid Discord token,
-            Missing Access: {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Missing access to channel or guild,
-            You need to verify your account in order to perform this action: {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Unverified"""}
+            401: Unauthorized: {y}[{Fore.LIGHTRED_EX }!{y}]{w} Invalid Discord token,
+            Missing Access: {y}[{Fore.LIGHTRED_EX }!{y}]{w} Missing access to channel or guild,
+            You need to verify your account in order to perform this action: {y}[{Fore.LIGHTRED_EX }!{y}]{w} Unverified"""}
         self.sent = 0
         self.errors = 0
 
@@ -59,13 +61,13 @@ class Main:
         )
         if (status := report.status_code) == 201:
             self.sent += 1
-            print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTGREEN_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Reported successfully""")
+            print(f"""{y}[{Fore.LIGHTGREEN_EX }!{y}]{w} Reported successfully""")
         elif status in (401, 403):
             self.errors += 1
             print(self.RESPONSES[report.json()['message']])
         else:
             self.errors += 1
-            print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Error: {report.text} | Status Code: {status}""")
+            print(f"""{y}[{Fore.LIGHTRED_EX }!{y}]{w} Error: {report.text} | Status Code: {status}""")
 
     def _update_title(self):
         while True:
@@ -94,12 +96,12 @@ class Main:
             recognized = False
 
         if not recognized:
-            print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter your token: """)
-            self.TOKEN = input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token: """)
+            print(f"""\n{y}[{w}+{y}]{w} Enter your token: """)
+            self.TOKEN = input(f"""{y}[{b}#{y}]{w} Token: """)
             with open(config_json, 'w') as f:
                 json.dump({'discordToken': self.TOKEN}, f)
         print()
         self._multi_threading()
 
-main = Main()
-main.setup()
+mr = massreport()
+mr.setup()
