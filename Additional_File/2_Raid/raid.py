@@ -309,7 +309,7 @@ class Nuker:
         elif choice == 'M' or choice == 'm':
             await self.Menu()
         elif choice == 'X' or choice == 'x':
-            os._exit(0)
+            main()
 
     async def Menu(self):
         os.system(f'cls & mode 85,20 & title [Astraa Nuker] - Connected: {client.user}')
@@ -370,7 +370,7 @@ class Nuker:
             input()
             await self.Menu()
         elif choice == 'X' or choice == 'x':
-            os._exit(0)
+            main()
 
     @client.event
     async def on_ready():
@@ -385,7 +385,7 @@ class Nuker:
         except:
             print(f"""{Fore.LIGHTWHITE_EX }[{Fore.LIGHTRED_EX }#{Fore.LIGHTWHITE_EX }] Invalid Token""")
             input()
-            os._exit(0)
+            main()
 
-if __name__ == "__main__":
-    Nuker().Startup()
+startt = Nuker()
+startt.Startup()
