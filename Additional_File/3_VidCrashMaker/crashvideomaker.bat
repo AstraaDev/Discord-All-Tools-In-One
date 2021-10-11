@@ -1,5 +1,4 @@
 @echo off
-title Discord Crash Video Creator - Made by Astraa
 
 color e
 echo.
