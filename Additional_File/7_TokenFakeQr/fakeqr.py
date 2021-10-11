@@ -5,7 +5,6 @@ from PIL import Image
 from bs4 import BeautifulSoup
 
 def fakeqr():
-    os.system(f'title FakeQR Code - Made by Astraa')
     os.system('cls')
     fakeqrtitle()
     print(f"""{y}[{w}+{y}]{w} Disfunction: \n""")
