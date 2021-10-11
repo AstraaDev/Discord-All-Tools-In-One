@@ -5,7 +5,6 @@ from itertools import cycle
 from colorama import Fore
 
 def cyclecolortheme():
-    os.system(f'title Cycle Color Theme - Made by Astraa')
     os.system('cls')
     cyclecolorthemetitle()
     print(f"""{y}[{w}+{y}]{w} Enter the token of the account you want to Cycle Color theme : """)
