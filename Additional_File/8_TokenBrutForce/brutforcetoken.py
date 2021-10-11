@@ -7,7 +7,6 @@ from discord.ext.commands import Bot
 from plyer import notification
 
 def brutforce():
-  os.system(f'title Token BrutForce - Made by Astraa')
   os.system('cls')
   brutforcetitle()
   print(f"""{y}[{w}+{y}]{w} Enter your own account token: """)
