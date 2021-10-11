@@ -2,8 +2,6 @@ from colorama import Fore
 import time, sys, os, ctypes, shutil
 
 def tokengrabber():
-    os.system(f'title Token Grabber - Made by Astraa')
-
     def spinner():
         l = ['|', '/', '-', '\\']
         for i in l+l:
