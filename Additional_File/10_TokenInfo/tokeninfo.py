@@ -2,21 +2,23 @@ import time
 import requests
 import json
 import sys
+import os
 import ctypes
 from datetime import datetime
 from colorama import Fore
 
-def main():
-    ctypes.windll.kernel32.SetConsoleTitleW("Token Informtions - Made by Astraa")
-    tokeninfo()
-    print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } You can find: \n\n""")
-    print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Username           {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } User ID                   {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Creation Date             {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Avatar URL\n""")
-    print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token              {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Nitro Status              {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Expiration date           {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Phone Number\n""")
-    print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Email              {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } 2FA/MFA Enabled           {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Flags                     {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Language\n""")
-    print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Email Verified     {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Payment Method            {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Payment Type\n\n\n""")
+def tokeninfo():
+    os.system(f'title Token Informtions - Made by Astraa')
+    os.system('cls')
+    tokeninfotitle()
+    print(f"""{y}[{Fore.LIGHTBLUE_EX }#{y}]{w} You can find: \n\n""")
+    print(f"""          {y}[{w}+{y}]{w} Username           {y}[{w}+{y}]{w} User ID                   {y}[{w}+{y}]{w} Creation Date             {y}[{w}+{y}]{w} Avatar URL\n""")
+    print(f"""          {y}[{w}+{y}]{w} Token              {y}[{w}+{y}]{w} Nitro Status              {y}[{w}+{y}]{w} Expiration date           {y}[{w}+{y}]{w} Phone Number\n""")
+    print(f"""          {y}[{w}+{y}]{w} Email              {y}[{w}+{y}]{w} 2FA/MFA Enabled           {y}[{w}+{y}]{w} Flags                     {y}[{w}+{y}]{w} Language\n""")
+    print(f"""          {y}[{w}+{y}]{w} Email Verified     {y}[{w}+{y}]{w} Payment Method            {y}[{w}+{y}]{w} Payment Type\n\n\n""")
     global token
-    print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter the token on which you want to find information : """)
-    token = str(input(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token: """))
+    print(f"""{y}[{w}+{y}]{w} Enter the token on which you want to find information : """)
+    token = str(input(f"""\n{y}[{b}#{y}]{w} Token: """))
 
     headers = {
         'Authorization': token,
@@ -89,14 +91,14 @@ def main():
         billing_info = []
 
         for x in requests.get('https://discordapp.com/api/v6/users/@me/billing/payment-sources', headers=headers).json():
-            y = x['billing_address']
-            name = y['name']
-            address_1 = y['line_1']
-            address_2 = y['line_2']
-            city = y['city']
-            postal_code = y['postal_code']
-            state = y['state']
-            country = y['country']
+            yy = x['billing_address']
+            name = yy['name']
+            address_1 = yy['line_1']
+            address_2 = yy['line_2']
+            city = yy['city']
+            postal_code = yy['postal_code']
+            state = yy['state']
+            country = yy['country']
 
             if x['type'] == 1:
                 cc_brand = x['brand']
@@ -138,27 +140,27 @@ def main():
 
             billing_info.append(data)
 
-        print(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Basic Information:""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Username: {user_name}""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } User ID: {user_id}""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Creation Date: {creation_date}""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Avatar URL: {avatar_url if avatar_id else ""}""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Token: {token}\n\n""")
+        print(f"""\n{y}[{b}#{y}]{w} Basic Information:""")
+        print(f"""          {y}[{w}+{y}]{w} Username: {user_name}""")
+        print(f"""          {y}[{w}+{y}]{w} User ID: {user_id}""")
+        print(f"""          {y}[{w}+{y}]{w} Creation Date: {creation_date}""")
+        print(f"""          {y}[{w}+{y}]{w} Avatar URL: {avatar_url if avatar_id else ""}""")
+        print(f"""          {y}[{w}+{y}]{w} Token: {token}\n\n""")
         
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Nitro Information:""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Nitro Status: {has_nitro}""")
+        print(f"""{y}[{b}#{y}]{w} Nitro Information:""")
+        print(f"""          {y}[{w}+{y}]{w} Nitro Status: {has_nitro}""")
 
         if has_nitro:
-            print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Expires in: {days_left} day(s)\n\n""")
+            print(f"""          {y}[{w}+{y}]{w} Expires in: {days_left} day(s)\n\n""")
         else:
-            print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Expires in: None day(s)\n\n""")
+            print(f"""          {y}[{w}+{y}]{w} Expires in: None day(s)\n\n""")
 
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Contact Information:""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Phone Number: {phone_number if phone_number else ""}""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Email: {email if email else ""}\n\n""")
+        print(f"""{y}[{b}#{y}]{w} Contact Information:""")
+        print(f"""          {y}[{w}+{y}]{w} Phone Number: {phone_number if phone_number else ""}""")
+        print(f"""          {y}[{w}+{y}]{w} Email: {email if email else ""}\n\n""")
 
         if len(billing_info) > 0:
-            print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Billing Information:""")
+            print(f"""{y}[{b}#{y}]{w} Billing Information:""")
             if len(billing_info) == 1:
                 for x in billing_info:
                     for key, val in x.items():
@@ -181,24 +183,24 @@ def main():
 
             print('\n')
 
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Account Security:""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } 2FA/MFA Enabled: {mfa_enabled}""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Flags: {flags}\n\n""")
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Other:""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Locale: {locale} ({language})""")
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Email Verified: {verified}""")
+        print(f"""{y}[{b}#{y}]{w} Account Security:""")
+        print(f"""          {y}[{w}+{y}]{w} 2FA/MFA Enabled: {mfa_enabled}""")
+        print(f"""          {y}[{w}+{y}]{w} Flags: {flags}\n\n""")
+        print(f"""{y}[{b}#{y}]{w} Other:""")
+        print(f"""          {y}[{w}+{y}]{w} Locale: {locale} ({language})""")
+        print(f"""          {y}[{w}+{y}]{w} Email Verified: {verified}""")
 
     elif res.status_code == 401:
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Invalid token""")
+        print(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} Invalid token""")
         time.sleep(2)
-        exit(0)
+        main()
 
     else:
-        print(f"""          {Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } An error occurred while sending request""")
+        print(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} An error occurred while sending request""")
         time.sleep(2)
-        exit(0)
+        main()
     
-    input(f"""\n\n\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Press ENTER to exit""")
-    exit(0)
+    input(f"""\n\n\n{y}[{b}#{y}]{w} Press ENTER to exit""")
+    main()
 
-main()
+tokeninfo()
