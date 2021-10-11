@@ -4,7 +4,6 @@ from colorama import Fore
 
 class massreport:
     def __init__(self):
-        os.system(f'title Mass Report - Made by Astraa')
         os.system('cls')
         massreporttitle()
         print(f"""{y}[{w}+{y}]{w} Enter the ID of the server where the message to be reported is located: """)
