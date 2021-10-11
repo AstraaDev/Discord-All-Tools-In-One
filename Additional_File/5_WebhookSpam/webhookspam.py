@@ -5,7 +5,6 @@ import os
 import ctypes
 
 def webhookspam():
-    os.system(f'title WebHook Spammer - Made by Astraa')
     os.system('cls')
     webhookspamtitle()
     print(f"""{y}[{w}+{y}]{w} Webhooks url for spam: """)
