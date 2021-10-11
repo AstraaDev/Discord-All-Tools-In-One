@@ -2,7 +2,6 @@ from colorama import Fore
 import time, sys, os, ctypes, shutil
 
 def discordrat():
-    os.system(f'title RAT - Made by Astraa')
     def spinner():
         l = ['|', '/', '-', '\\']
         for i in l+l:
