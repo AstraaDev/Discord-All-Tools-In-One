@@ -3,7 +3,6 @@ from colorama import Fore
 from selenium import webdriver
 
 def autologin() :
-    os.system(f'title AutoLogin - Made by Astraa')
     os.system('cls')
     autologintitle()
     print(f"""{y}[{w}+{y}]{w} Enter the token of the account you want to connect to: """)
