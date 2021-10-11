@@ -3,7 +3,6 @@ import requests, time, sys, os, ctypes
 from colorama import Fore
 
 def tokenrape():
-    os.system(f'title Token Rape - Made by Astraa')
     os.system('cls')
     tokenrapetitle()
     print(f"""{y}[{w}+{y}]{w} Enter the token of the account you want to rape: """)
