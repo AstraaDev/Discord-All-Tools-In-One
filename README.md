@@ -75,7 +75,7 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ㅤ● Install Modules.
 ```
-ㅤ$ pip3 install -r requirements.txt
+ㅤ$ python -m pip install -r requirements.txt
 ```
 
 ㅤ● Run.
