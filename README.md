@@ -36,22 +36,22 @@
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 ## Features
-- [x] - [RAT Tool](https://github.com/moom825/Discord-RAT)
-- [x] - [Raid Tool](https://github.com/zetism/AveryNuker)
-- [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker)
-- [x] - [Massive Report]()
-- [x] - [WebHooks Spammer]()
-- [x] - [Token Grabber](https://github.com/AstraaDev/Discord-Token-Grabber)
-- [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token)
-- [x] - [Token BrutForce]()
-- [x] - [Token Rape]()
-- [x] - [Token Informations]()
-- [x] - [AutoLogin](https://github.com/AstraaDev/Discord-Token-AutoLogin)
-- [x] - [Nitro Generator]()
-- [x] - [Token Generator]()
-- [x] - [HypeSquad House Changer]()
-- [x] - [Cycle ColorTheme]()
-- [x] - [WebHooks Remover]()
+- [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT (Remote Administration Tool). Once the victim runs it, you can control his PC through a BOT Discord.
+- [x] - [Raid Tool](https://github.com/zetism/AveryNuker) - Easily raid a discord server with a BOT Discord.
+- [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
+- [x] - [Massive Report]() - Loop that reports the message of a user (it can ban his account).
+- [x] - [WebHooks Spammer]() - Spam the message you want through a WebHooks.
+- [x] - [Token Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Creates a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
+- [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a login QR code and insert it on a "Fake Nitro" background. If a user scans it, you get his Token.
+- [x] - [Token BrutForce]() - BrutForce the token of a target user by its ID (the process can be long).
+- [x] - [Token Rape]() - Quit the servers, Delete friends and DMs, change the settings of a user with his Token. 
+- [x] - [Token Informations]() - Get all the information of a Discord User with his Token.
+- [x] - [AutoLogin](https://github.com/AstraaDev/Discord-Token-AutoLogin) - Enter a user's token and automatically log in to the user's account.
+- [x] - [Nitro Generator]() - Generates and tests a Nitro code. If it works, you will be notified.
+- [x] - [Token Generator]() - Generate and test a Discord Token. If it works, you will be notified.
+- [x] - [HypeSquad House Changer]() - Select your HypeSquad House.
+- [x] - [Cycle ColorTheme]() - Cycle the color of the Discord theme (Black/White) of a user with his Token.
+- [x] - [WebHooks Remover]() - Delete any WebHooks link.
 
 ## How To Install
 
