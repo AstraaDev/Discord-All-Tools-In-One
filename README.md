@@ -36,13 +36,13 @@
 THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
 
 ## Features
-- [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT (Remote Administration Tool). Once the victim runs it, you can control his PC through a BOT Discord.
+- [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT file. Once the victim runs it, you can control his PC through a BOT Discord.
 - [x] - [Raid Tool](https://github.com/zetism/AveryNuker) - Easily raid a discord server with a BOT Discord.
 - [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
 - [x] - [Massive Report]() - Loop that reports the message of a user (it can ban his account).
 - [x] - [WebHooks Spammer]() - Spam the message you want through a WebHooks.
 - [x] - [Token Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Creates a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
-- [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a login QR code and insert it on a "Fake Nitro" background. If a user scans it, you get his Token.
+- [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a "Fake Nitro QR Code". If a user scans it, you get his token.
 - [x] - [Token BrutForce]() - BrutForce the token of a target user by its ID (the process can be long).
 - [x] - [Token Rape]() - Quit the servers, Delete friends and DMs, change the settings of a user with his Token. 
 - [x] - [Token Informations]() - Get all the information of a Discord User with his Token.
