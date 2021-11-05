@@ -29,11 +29,11 @@
 </p>
 
 ## Disclaimer
-<p align="center">
-   This project was created only for good purposes and personal use.
-</p>
 
-THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS SOFTWARE AT YOUR OWN RISK. THE USE IS COMPLETE RESPONSIBILITY OF THE END-USER. THE DEVELOPERS ASSUME NO LIABILITY AND ARE NOT RESPONSIBLE FOR ANY MISUSE OR DAMAGE CAUSED BY THIS PROGRAM.
+|AstraaHome was made for Educational purposes|
+|-------------------------------------------------|
+This project was created only for good purposes and personal use.
+By using AstraaHome, you agree that you hold responsibility and accountability of any consequences caused by your actions.
 
 ## Features
 - [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT file. Once the victim runs it, you can control his PC through a BOT Discord.
@@ -55,32 +55,16 @@ THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. YOU MAY USE THIS
 
 ## How To Install
 
-### -Automated installation:
-
-ㅤ● Launch the [setup.bat](setup.bat) file. A new file will be created. You will only have to launch it.
-ㅤ
-
-ㅤ
-
-### OR
-ㅤ
-
-
-### -Manual installation:
-
-ㅤ● Clone the repository.
+#### 1st・Installation (Automated installation)
 ```
-ㅤ$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
+Launch the setup.bat file. A new file will be created. You will only have to launch it.
 ```
 
-ㅤ● Install Modules.
+#### 2nd・Installation (Manual installation)
 ```
-ㅤ$ python -m pip install -r requirements.txt
-```
-
-ㅤ● Run.
-```
-ㅤ$ python astraahome.py
+$ git clone https://github.com/AstraaDev/Discord-All-Tools-In-One.git
+$ python -m pip install -r requirements.txt
+$ python3 astraahome.py
 ```
 
 ## Additional Informations
@@ -96,7 +80,9 @@ Script Informations:
 ## Example
 ![home.png](https://cdn.discordapp.com/attachments/826581697436581919/897160907879231498/unknown.png)
 
-## Credits
-[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='25'>](https://github.com/AstraaDev)          [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg' alt='twitter' height='25'>](https://twitter.com/AstraaDev)          [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/icloud.svg' alt='website' height='25'>](http://astraadev.club)  
-<br>
-[![Astraa's GitHub stats](https://github-readme-stats.vercel.app/api?username=AstraaDev)](https://github.com/AstraaDev/github-readme-stats)
+## Errors/Fixes
+
+pyinstaller is not recognized as an external command
+> open a cmd and type `pip install pyinstaller` or make sure [python](https://www.python.org/downloads/) is added to [PATH](https://datatofish.com/add-python-to-windows-path/)
+
+> You probably have python 3.10 which has some new shit so downgrade to [python 3.9](https://www.python.org/downloads/release/python-397/)
