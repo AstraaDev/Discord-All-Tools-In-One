@@ -71,7 +71,7 @@ $ python3 astraahome.py
 General Informations:
 - If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=27-Swg_MUNw&t=16s) to watch the YouTube video.
 - Find your output files in the  [temp](/temp) folder.
-- If you find any malfunction, contact me on Discord: Astraa#4589.
+- If you find any malfunction, contact me on Discord: Astraa#1000.
 
 Script Informations:
 - For the operation of the RAT Tool, please refer to the [creator's page](https://github.com/moom825/Discord-RAT).
