@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  [Discord] - All Tools In One is a Script Gathering for Windows/MacOS/Linux systems written in Python.
+  [Discord] - All Tools In One is a Script Gathering for Windows/Linux systems written in Python.
 </p>
 
 ## Disclaimer
