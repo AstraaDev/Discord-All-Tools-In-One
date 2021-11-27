@@ -38,7 +38,7 @@ By using AstraaHome, you agree that you hold responsibility and accountability o
 ## Features
 - [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT file. Once the victim runs it, you can control his PC through a BOT Discord.
 - [x] - [Raid Tool](https://github.com/zetism/AveryNuker) - Easily raid a discord server with a BOT Discord.
-- [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
+- [ ] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
 - [x] - [Massive Report]() - Loop that reports the message of a user (it can ban his account).
 - [x] - [WebHooks Spammer]() - Spam the message you want through a WebHooks.
 - [x] - [Token Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Creates a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
