@@ -2,7 +2,7 @@
   <img src="https://i.discord.fr/PSS.png">
 </p>
 
-<h1 align="center">[Discord] - All Tools In One (V2.0)</h1>
+<h1 align="center">[Discord] - All Tools In One (V2.1)</h1>
 <p align="center">
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-important">
@@ -36,21 +36,27 @@ This project was created only for good purposes and personal use.
 By using AstraaHome, you agree that you hold responsibility and accountability of any consequences caused by your actions.
 
 ## Features
+- [ ] - [Selft Bot]() - Turn your discord account into a self bot.
 - [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT file. Once the victim runs it, you can control his PC through a BOT Discord.
-- [x] - [Raid Tool](https://github.com/zetism/AveryNuker) - Easily raid a discord server with a BOT Discord.
-- [ ] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
-- [x] - [Massive Report]() - Loop that reports the message of a user (it can ban his account).
-- [x] - [WebHooks Spammer]() - Spam the message you want through a WebHooks.
-- [x] - [Token Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Creates a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
+- [ ] - [Raid Tool]() - Allows to raid a discord server with several accounts (requires an account generator).
+- [x] - [Server Nuker](https://github.com/zetism/AveryNuker) - Easily nuke a discord server with a BOT Discord.
+- [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
+- [x] - [File Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Create a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
+- [ ] - [Image Grabber]() - Create an image that when viewed, sends you the user's token.
 - [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a "Fake Nitro QR Code". If a user scans it, you get his token.
-- [x] - [Token BrutForce]() - BrutForce the token of a target user by its ID (the process can be long).
-- [x] - [Token Rape]() - Quit the servers, Delete friends and DMs, change the settings of a user with his Token. 
+- [ ] - [IP Grabber]() - Allows you to retrieve the IP of any person who is on a call with you.
+- [x] - [Account Nuker]() - Quit/Delete the servers, Delete friends and DMs, Create 100 serveurs, change the settings of a user with his Token.
+- [x] - [Account Disabler](https://github.com/assaultfulgg/account-disabler) - Allows you to disable any discord account with the token of this one.
+- [x] - [Account Generator]() - Create a discord account valid every 1min30 and give you the associated token. 
+- [x] - [Settings Cycler]() - Cycle the color of the Discord theme (Black/White) of a user with his Token.
 - [x] - [Token Informations]() - Get all the information of a Discord User with his Token.
 - [x] - [AutoLogin](https://github.com/AstraaDev/Discord-Token-AutoLogin) - Enter a user's token and automatically log in to the user's account.
-- [x] - [Nitro Generator]() - Generates and tests a Nitro code. If it works, you will be notified.
-- [x] - [Token Generator]() - Generate and test a Discord Token. If it works, you will be notified.
+- [x] - [Clear DM](https://github.com/Da532/Clear) - Delete all your messages sent to a person in dm automatically.
 - [x] - [HypeSquad House Changer]() - Select your HypeSquad House.
-- [x] - [Cycle ColorTheme]() - Cycle the color of the Discord theme (Black/White) of a user with his Token.
+- [x] - [Statue Changer]() - Change your Discord Statue.
+- [x] - [Nitro Generator]() - Generates and tests a Nitro code. If it works, you will be notified.
+- [ ] - [Nitro Sniper]() - Snipe in your servers the nitro links. If a link is found, it will try to put it on your account.
+- [x] - [WebHooks Spammer]() - Spam the message you want through a WebHooks.
 - [x] - [WebHooks Remover]() - Delete any WebHooks link.
 
 ## How To Install
