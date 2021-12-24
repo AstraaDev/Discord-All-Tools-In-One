@@ -47,7 +47,7 @@ By using AstraaHome, you agree that you hold responsibility and accountability o
 - [ ] - [IP Grabber]() - Allows you to retrieve the IP of any person who is on a call with you.
 - [x] - [Account Nuker]() - Quit the servers, Delete friends, Create serveurs, change the settings of a user with his Token.
 - [x] - [Account Disabler](https://github.com/assaultfulgg/account-disabler) - Allows you to disable any discord account with the token of this one.
-- [x] - [Account Generator]() - Create a discord account valid every 1min30 and give you the associated token. 
+- [ ] - [Account Generator]() - Create a discord account valid every 1min30 and give you the associated token. 
 - [x] - [Settings Cycler]() - Cycle the color of the Discord theme (Black/White) of a user with his Token.
 - [x] - [Token Informations]() - Get all the information of a Discord User with his Token.
 - [x] - [AutoLogin](https://github.com/AstraaDev/Discord-Token-AutoLogin) - Enter a user's token and automatically log in to the user's account.
