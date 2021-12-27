@@ -42,7 +42,6 @@ By using AstraaHome, you agree that you hold responsibility and accountability o
 - [x] - [Server Nuker](https://github.com/zetism/AveryNuker) - Easily nuke a discord server with a BOT Discord.
 - [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
 - [x] - [File Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Create a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
-- [ ] - [Image Grabber]() - Create an image that when viewed, sends you the user's token.
 - [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a "Fake Nitro QR Code". If a user scans it, you get his token.
 - [ ] - [IP Grabber]() - Allows you to retrieve the IP of any person who is on a call with you.
 - [x] - [Account Nuker]() - Quit the servers, Delete friends, Create serveurs, change the settings of a user with his Token.
