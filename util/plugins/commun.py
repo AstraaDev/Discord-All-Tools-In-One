@@ -5,7 +5,7 @@ from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 from colorama import Fore
 from time import sleep
 
-THIS_VERSION = "1.1"
+THIS_VERSION = "1.1.2"
 
 y = Fore.LIGHTYELLOW_EX
 b = Fore.LIGHTBLUE_EX
