@@ -60,7 +60,11 @@ def tokeninfo():
         'mastercard': '5'
     }
 
-    res = requests.get('https://discordapp.com/api/v6/users/@me', headers=headers)
+    try:
+        res = requests.get('https://discordapp.com/api/v6/users/@me', headers=headers)
+    except:
+        input(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} An error occurred while sending request""")
+        main()
 
     if res.status_code == 200:
         res_json = res.json()
@@ -76,6 +80,7 @@ def tokeninfo():
         verified = res_json['verified']
         
         language = languages.get(locale)
+        from datetime import datetime
         creation_date = datetime.utcfromtimestamp(((int(user_id) >> 22) + 1420070400000) / 1000).strftime('%d-%m-%Y %H:%M:%S UTC')
         has_nitro = False
         res = requests.get('https://discordapp.com/api/v6/users/@me/billing/subscriptions', headers=headers)
@@ -194,8 +199,7 @@ def tokeninfo():
         main()
 
     else:
-        print(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} An error occurred while sending request""")
-        time.sleep(2)
+        input(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} An error occurred while sending request""")
         main()
     
     input(f"""\n\n{y}[{b}#{y}]{w} Press ENTER to exit""")
