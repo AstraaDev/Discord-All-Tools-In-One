@@ -35,7 +35,7 @@ def checkvalidity():
             verified = res_json['verified']
             if verified == True:
                 print(f'{Fore.LIGHTGREEN_EX}[!] Valid: {w}'+x)
-                with open("temp/valids.txt", "a") as save:
+                with open("output/valids.txt", "a") as save:
                     save.write(x+"\n")
                     valid += 1
             else:
