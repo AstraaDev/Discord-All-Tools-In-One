@@ -1,5 +1,4 @@
 import requests, os, sys, re, time, random, os.path, string, subprocess, random, threading, ctypes
-import pylibcheck
 from colorate import colorate; colorate()
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 from colorama import Fore
