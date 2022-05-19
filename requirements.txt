@@ -14,5 +14,4 @@ aiohttp
 pypresence
 pyinstaller
 dhooks
-pylibcheck
 pystyle
