@@ -11,8 +11,6 @@ y = Fore.LIGHTYELLOW_EX
 b = Fore.LIGHTBLUE_EX
 w = Fore.LIGHTWHITE_EX
 
-pkgs = ['discord_webhook', 'requests', 'colorama', 'plyer', 'discord.py', 'selenium', 'colorate','beautifulsoup4', 'Pillow', 'PyAutoGUI', 'pyperclip', 'selenium', 'aiohttp', 'pypresence', 'pyinstaller', 'dhooks']
-
 def setTitle(_str):
     system = os.name
     if system == 'nt':
@@ -121,27 +119,6 @@ def proxy():
         fp.truncate()
         fp.writelines(lines[1:])
     return ({'http://': f'http://{proxy}', 'https://': f'https://{proxy}'})
-
-def installPackage(dependencies):
-    print(f'{y}[{Fore.RED}#{y}]{w} Checking packages')
-    if sys.argv[0].endswith('.exe'):
-            reqs = subprocess.check_output(['python', '-m', 'pip', 'freeze'])
-            installed_packages = [r.decode().split('==')[0].lower() for r in reqs.split()]
-
-            for lib in dependencies:
-                if lib not in installed_packages:
-                    print(f"{y}[{Fore.LIGHTRED_EX}!{y}]{w} {lib} not found! Installing it for you")
-                    try:
-                        subprocess.check_call(['python', '-m', 'pip', 'install', lib])
-                    except Exception as e:
-                        print(f"{y}[{Fore.LIGHTRED_EX}!{y}]{w} Error: {e}")
-                        sleep(0.5)
-                        pass
-    else:
-        for i in dependencies:
-            if not pylibcheck.checkPackage(i):
-                print(f"{Fore.BLUE}{i}{Fore.RED} not found! Installing it for you. . .{Fore.RESET}")
-                pylibcheck.installPackage(i)
 
 heads = [
     {
