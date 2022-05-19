@@ -134,7 +134,6 @@ if __name__ == "__main__":
     os.system("""if not exist "util/chromedriver.exe" echo [#] Downloading chromedriver: """)
     os.system("""if not exist "util/chromedriver.exe" curl -#fkLo "util/chromedriver.exe" "https://github.com/AstraaDev/complement/raw/main/chromedriver.exe" """)
     if os.path.basename(sys.argv[0]).endswith("exe"):
-        installPackage(pkgs)
         search_for_updates()
         if not os.path.exists(getTempDir()+"\\atio_proxies"):
             proxy_scrape()
