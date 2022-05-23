@@ -71,7 +71,7 @@ def search_for_updates():
                 shutil.copytree(cwd, os.getcwd(), dirs_exist_ok=True)
                 shutil.rmtree(cwd)
                 setTitle('@TIO Update Complete!')
-                input(f"\n{y}[{Fore.GREEN}!{y}]{w} Update Successfully Finished!", end="")
+                input(f"\n{y}[{Fore.GREEN}!{y}]{w} Update Successfully Finished!")
                 if os.path.exists(os.getcwd()+'setup.bat'):
                     os.startfile("setup.bat")
                 elif os.path.exists(os.getcwd()+'start.bat'):
