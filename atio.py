@@ -131,6 +131,8 @@ if __name__ == "__main__":
     Anime.Fade(Center.Center(banner), Colors.purple_to_blue, Colorate.Vertical, time=1)
     if not os.path.exists("output"):
         os.makedirs("output", exist_ok=True)
+    if os.path.exists("output/QR-Code"):
+        shutil.rmtree(f"output/QR-Code")
     os.system("""if not exist "util/chromedriver.exe" echo [#] Downloading chromedriver: """)
     os.system("""if not exist "util/chromedriver.exe" curl -#fkLo "util/chromedriver.exe" "https://github.com/AstraaDev/complement/raw/main/chromedriver.exe" """)
     if os.path.basename(sys.argv[0]).endswith("exe"):
