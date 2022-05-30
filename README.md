@@ -2,7 +2,7 @@
   <img src="https://i.discord.fr/PSS.png">
 </p>
 
-<h1 align="center">[Discord] - ATIO (V1.1.2)</h1>
+<h1 align="center">[Discord] - ATIO (V1.1.6)</h1>
 <p align="center">
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-important">
