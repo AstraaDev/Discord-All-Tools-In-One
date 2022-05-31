@@ -1,9 +1,9 @@
 import os, time, os.path
 from colorama import Fore
-from selenium import webdriver
 from util.plugins.commun import * 
 
 def autologin() :
+    from selenium import webdriver
     setTitle("Auto Login")
     clear()
     autologintitle()
