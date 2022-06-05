@@ -9,7 +9,7 @@ def main():
 \n          {y}[{w}01{y}]{w} Self Bot               {y}[{w}06{y}]{w} File                    {y}[{w}09{y}]{w} Account Nuker            {y}[{w}15{y}]{w} Tokens Checker
 \n          {y}[{w}02{y}]{w} RAT Tool               {y}[{w}07{y}]{w} Image                   {y}[{w}10{y}]{w} Account Disabler         {y}[{w}16{y}]{w} Clear DM
 \n          {y}[{w}03{y}]{w} Raid Tool              {y}[{w}08{y}]{w} QrCode                  {y}[{w}11{y}]{w} Account Generator        {y}[{w}17{y}]{w} House Changer
-\n          {y}[{w}04{y}]{w} Server Nuker                                        {y}[{w}12{y}]{w} Settings Cycler          {y}[{w}18{y}]{w} Statue Changer
+\n          {y}[{w}04{y}]{w} Server Nuker                                        {y}[{w}12{y}]{w} Settings Cycler          {y}[{w}18{y}]{w} Server Lookup
 \n          {y}[{w}05{y}]{w} VideoCrash Maker                                    {y}[{w}13{y}]{w} Token Informations       {y}[{w}19{y}]{w} Mass DM
 \n                                                                   {y}[{w}14{y}]{w} AutoLogin                {y}[{w}20{y}]{w} Group Spammer          
 \t\t\t\t\t\t\t\t\t\t\t\t\t {y}[{b}>{y}]{w} Next Page""")
@@ -79,7 +79,7 @@ def main():
         exec(open('util/17_HouseChanger/housechanger.py').read())
     elif choice == '18':
         transition()
-        exec(open('util/18_StatueChanger/statuechanger.py').read())
+        exec(open('util/18_ServerLookup/serverlookup.py').read())
     elif choice == '19':
         transition()
         exec(open('util/19_MassDM/massdm.py').read())
