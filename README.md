@@ -76,7 +76,7 @@ $ python3 atio.py
 
 ## Additional Informations
 General Informations:
-- If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=27-Swg_MUNw&t=16s) to watch the YouTube video.
+- If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=AN3Z_x6HQi0) to watch the YouTube video.
 - Find your output files in the  [output](/output) folder.
 - If you find any malfunction, contact me on Discord: Astraa#6100.
 
