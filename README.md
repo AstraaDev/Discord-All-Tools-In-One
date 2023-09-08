@@ -2,7 +2,8 @@
   <img src="https://i.discord.fr/PSS.png">
 </p>
 
-<h1 align="center">[Discord] - ATIO (V1.1.8)</h1>
+<h1 align="center">[Discord] - ATIO (V1.3.0)</h1>
+<h1 align="center">The project is no longer under active development and will not receive any further updates or bug fixes.</h1>
 <p align="center">
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-important">
@@ -15,9 +16,6 @@
   </a>
   <a href="https://github.com/AstraaDev">
     <img src="https://img.shields.io/github/repo-size/AstraaDev/Discord-All-Tools-In-One.svg?label=Repo%20size&style=flat-square">
-  </a>
-  <a href="https://github.com/AstraaDev">
-    <img src="https://gpvc.arturio.dev/AstraaDev">
   </a>
     <p align="center"> <a href="https://twitter.com/astraadev" target="blank">
     <img src="https://img.shields.io/twitter/follow/astraadev?logo=twitter&style=for-the-badge" alt="astraadev"/></a>
@@ -37,13 +35,13 @@ By using ATIO, you agree that you hold responsibility and accountability of any 
 
 ## Features
 - [ ] - [Selft Bot](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Turn your discord account into a self bot.
-- [x] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT file. Once the victim runs it, you can control his PC through a BOT Discord.
+- [ ] - [RAT Tool](https://github.com/moom825/Discord-RAT) - Create a RAT file. Once the victim runs it, you can control his PC through a BOT Discord.
 - [ ] - [Raid Tool](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Allows to raid a discord server with several accounts (requires an account generator).
 - [ ] - [Server Nuker](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Easily nuke a discord server with a BOT Discord.
 - [x] - [VideoCrash Maker](https://github.com/AstraaDev/Discord-VideoCrashMaker) - Convert a video into an identical video that makes Crash discord app when played.
 - [x] - [File Grabber](https://github.com/AstraaDev/Discord-Token-Grabber) - Create a TokenGrabber.py file to get a user's token and allows you to convert it to an Exe.
 - [ ] - [IP Grabber](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Allows you to retrieve the IP of any person who is on a call with you.
-- [x] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a "Fake Nitro QR Code". If a user scans it, you get his token.
+- [ ] - [Token Qr Generator](https://github.com/AstraaDev/Discord-Qr-Code-Token) - Generate a "Fake Nitro QR Code". If a user scans it, you get his token.
 - [x] - [Account Nuker](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Quit the servers, Delete friends, Create serveurs, change the settings of a user with his Token.
 - [x] - [Account Disabler](https://github.com/assaultfulgg/account-disabler) - Allows you to disable any discord account with the token of this one.
 - [ ] - [Account Generator](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Create a discord account valid every 1min30 and give you the associated token. 
@@ -76,15 +74,12 @@ $ python3 atio.py
 
 ## Additional Informations
 General Informations:
-- If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=AN3Z_x6HQi0) to watch the YouTube video.
+- If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=o-YBDTqX_ZU) to watch the YouTube video.
 - Find your output files in the  [output](/output) folder.
-- If you find any malfunction, contact me on Discord: Astraa#6100.
-
-Script Informations:
-- For the operation of the RAT Tool, please refer to the [creator's page](https://github.com/moom825/Discord-RAT).
+- If you find any malfunction, contact me on Discord: None.
 
 ## Example
-![home.png](https://cdn.discordapp.com/attachments/778283706388709376/983080071805952040/unknown.png?size=4096)
+![home.png](https://cdn.discordapp.com/attachments/1033450243481677874/1149718136258576466/image.png)
 
 ## Errors/Fixes
 
