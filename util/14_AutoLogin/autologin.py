@@ -1,14 +1,20 @@
-import os, time, os.path
+import requests
+import time
 from colorama import Fore
-from util.plugins.commun import * 
+from util.plugins.commun import *
 
 def autologin() :
     from selenium import webdriver
     setTitle("Auto Login")
     clear()
     autologintitle()
-    print(f"""{y}[{w}+{y}]{w} Enter the token of the account you want to connect to""")
-    entertoken = str(input(f"""{y}[{b}#{y}]{w} Token: """))
+    print(f"{y}[{w}+{y}]{w} Enter the token of the account you want to connect to")
+    entertoken = str(input(f"{y}[{b}#{y}]{w} Token: "))
+    validityTest = requests.get('https://discordapp.com/api/v6/users/@me', headers={'Authorization': entertoken, 'Content-Type': 'application/json'})
+    if validityTest.status_code != 200:
+        print(f"\n{y}[{Fore.LIGHTRED_EX }!{y}]{w} Invalid token")
+        input(f"""\n{y}[{b}#{y}]{w} Press ENTER to exit""")
+        main()
     try:
         driver = webdriver.Chrome(executable_path=r'util/chromedriver.exe')
         driver.maximize_window()
@@ -29,7 +35,7 @@ def autologin() :
         input(f"""{y}[{b}#{y}]{w} Press ENTER to exit""")
         main()
     except:
-        print(f"""      {y}[{Fore.LIGHTRED_EX }!{y}]{w} There is a problem with your Token""")
+        print(f"      {y}[{Fore.LIGHTRED_EX }!{y}]{w} A problem occurred")
         time.sleep(2)
         clear()
         main()
