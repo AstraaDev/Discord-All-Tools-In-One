@@ -1,43 +1,51 @@
 import requests
-import time
 from colorama import Fore
-from util.plugins.commun import *
+from util.plugins.commun import * 
 
-def autologin() :
-    from selenium import webdriver
-    setTitle("Auto Login")
+def serverlookup():
+    setTitle("Server Lookup")
     clear()
-    autologintitle()
-    print(f"{y}[{w}+{y}]{w} Enter the token of the account you want to connect to")
-    entertoken = str(input(f"{y}[{b}#{y}]{w} Token: "))
-    validityTest = requests.get('https://discordapp.com/api/v6/users/@me', headers={'Authorization': entertoken, 'Content-Type': 'application/json'})
-    if validityTest.status_code != 200:
-        print(f"\n{y}[{Fore.LIGHTRED_EX }!{y}]{w} Invalid token")
-        input(f"""\n{y}[{b}#{y}]{w} Press ENTER to exit""")
-        main()
+    serverlookuptitle()
+    print(f"""{y}[{Fore.LIGHTBLUE_EX }#{y}]{w} You can find: \n\n""")
+    print(f"""          {y}[{w}+{y}]{w} Invite Link           {y}[{w}+{y}]{w} Inviter Username      {y}[{w}+{y}]{w} Guild Banner          {y}[{w}+{y}]{w} Guild Splash\n""")
+    print(f"""          {y}[{w}+{y}]{w} Channel Name          {y}[{w}+{y}]{w} Inviter ID            {y}[{w}+{y}]{w} Guild Descrpition     {y}[{w}+{y}]{w} Guild Features\n""")
+    print(f"""          {y}[{w}+{y}]{w} Channel ID            {y}[{w}+{y}]{w} Guild Name            {y}[{w}+{y}]{w} Custom Invite Link\n""")
+    print(f"""          {y}[{w}+{y}]{w} Expiration Date       {y}[{w}+{y}]{w} Guild ID              {y}[{w}+{y}]{w} Verification Level\n\n\n\n""")
+    print(f"{y}[{w}+{y}]{w} Insert end part of link of discord server link: ")
+    invitelink = input(f"""{y}[{b}#{y}]{w} Invite link: """)
+    clear()
     try:
-        driver = webdriver.Chrome(executable_path=r'util/chromedriver.exe')
-        driver.maximize_window()
-        driver.get('https://discord.com/login')
-        js = 'function login(token) {setInterval(() => {document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token = `"${token}"`}, 50);setTimeout(() => {location.reload();}, 500);}'
-        time.sleep(3)
-        driver.execute_script(js + f'login("{entertoken}")')
-        time.sleep(10)
-        if driver.current_url == 'https://discord.com/login':
-            clear()
-            autologintitle()
-            print(f"""{y}[{Fore.LIGHTRED_EX }!{y}]{w} Connection Failed""")
-            driver.close()
-        else:
-            clear()
-            autologintitle()
-            print(f"""{y}[{Fore.LIGHTGREEN_EX }!{y}]{w} Connection Established""")
-        input(f"""{y}[{b}#{y}]{w} Press ENTER to exit""")
-        main()
+        res = requests.get(f"https://discord.com/api/v9/invites/{invitelink}")
     except:
-        print(f"      {y}[{Fore.LIGHTRED_EX }!{y}]{w} A problem occurred")
-        time.sleep(2)
-        clear()
+        input(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} An error occurred while sending request""")
         main()
 
-autologin()
+    if res.status_code == 200:
+        res_json = res.json()
+
+        print(f"""\n{y}[{b}#{y}]{w} Invitation Information:""")
+        print(f"""          {y}[{w}+{y}]{w} Invite Link: {f'https://discord.gg/{res_json["code"]}'}""")
+        print(f"""          {y}[{w}+{y}]{w} Channel: {res_json["channel"]["name"]} ({res_json["channel"]["id"]})""")
+        print(f"""          {y}[{w}+{y}]{w} Expiration Date: {res_json["expires_at"]}\n""")
+
+        print(f"""{y}[{b}#{y}]{w} Inviter Information:""")
+        print(f"""          {y}[{w}+{y}]{w} Username: {f'{res_json["inviter"]["username"]}#{res_json["inviter"]["discriminator"]}'}""")
+        print(f"""          {y}[{w}+{y}]{w} User ID: {res_json["inviter"]["id"]}\n""")
+
+        print(f"""{y}[{b}#{y}]{w} Server Information:""")
+        print(f"""          {y}[{w}+{y}]{w} Name: {res_json["guild"]["name"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Server ID: {res_json["guild"]["id"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Banner: {res_json["guild"]["banner"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Description: {res_json["guild"]["description"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Custom Invite Link: {res_json["guild"]["vanity_url_code"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Verification Level: {res_json["guild"]["verification_level"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Splash: {res_json["guild"]["splash"]}""")
+        print(f"""          {y}[{w}+{y}]{w} Features: {res_json["guild"]["features"]}""")
+    else:
+        input(f"""          {y}[{Fore.LIGHTRED_EX }#{y}]{w} An error occurred while sending request""")
+        main()
+    
+    input(f"""\n\n{y}[{b}#{y}]{w} Press ENTER to exit""")
+    main()
+
+serverlookup()
