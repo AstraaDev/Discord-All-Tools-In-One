@@ -14,16 +14,18 @@ def main():
 \n                                                                   {y}[{w}14{y}]{w} AutoLogin                {y}[{w}20{y}]{w} Group Spammer          
 \t\t\t\t\t\t\t\t\t\t\t\t\t {y}[{b}>{y}]{w} Next Page""")
     global choice
-    choice = input(f"""{y}[{b}#{y}]{w} Choice: """).lstrip("0") # lstrip so it cuts all the leading 0's
+    choice = input(f"""{y}[{b}#{y}]{w} Choice: """).lstrip("0")
     
     if choice == '1':
         transition()
         selfbottitle()
-        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool is under development, so it is not yet usable.")
+        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool don't work anymore.")
         main()
     elif choice == '2':
         transition()
-        exec(open('util/2_Rat/rat.py').read())
+        rattitle()
+        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool don't work anymore.")
+        main()
     elif choice == '3':
         transition()
         raidtitle()
@@ -47,13 +49,17 @@ def main():
         main()
     elif choice == '8':
         transition()
-        exec(open('util/8_TokenFakeQr/fakeqr.py').read())
+        fakeqrtitle()
+        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool don't work anymore.")
+        main()
     elif choice == '9':
         transition()
         exec(open('util/9_AccountNuker/accountnuker.py').read())
     elif choice == '10':
         transition()
-        exec(open('util/10_AccountDisabler/accountdisabler.py').read())
+        accountdisablertitle()
+        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool don't work anymore.")
+        main()
     elif choice == '11':
         transition()
         accountgentitle()
@@ -73,7 +79,9 @@ def main():
         exec(open('util/15_TokensChecker/tokenschecker.py').read()) 
     elif choice == '16':
         transition()
-        exec(open('util/16_ClearDM/cleardm.py').read())
+        cleardmtitle()
+        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool don't work anymore.")
+        main()
     elif choice == '17':
         transition()
         exec(open('util/17_HouseChanger/housechanger.py').read())
@@ -85,7 +93,9 @@ def main():
         exec(open('util/19_MassDM/massdm.py').read())
     elif choice == '20':
         transition()
-        exec(open('util/20_GroupSpammer/groupspammer.py').read())
+        groupspamtitle()
+        input(f"{y}[{Fore.LIGHTRED_EX }!{y}]{w} This tool don't work anymore.")
+        main()
     elif choice == '>':
         clear()
         astraahometitle()
@@ -106,7 +116,7 @@ def main():
         elif choice == '24':
             transition()
             astraahometitle()
-            print(f"""                                            {y}[{b}+{y}]{w} Development Networks:\n\n                                                {y}[{w}#{y}]{w} GitHub:    @AstraaDev\n                                                {y}[{w}#{y}]{w} Server:    dsc.gg/astraaddev\n\n\n                                            {y}[{b}+{y}]{w} Other Network\n\n                                                {y}[{w}#{y}]{w} Twitter:   @AstraaDev\n                                                {y}[{w}#{y}]{w} Discord:   Astraa#6100\n                                                {y}[{w}#{y}]{w} Insta:     @astraaftn\n\n\n\n""")
+            print(f"""                                            {y}[{b}+{y}]{w} Development Networks:\n\n                                                {y}[{w}#{y}]{w} GitHub:    @AstraaDev\n                                                {y}[{w}#{y}]{w} Server:    None\n\n\n                                            {y}[{b}+{y}]{w} Other Network\n\n                                                {y}[{w}#{y}]{w} Twitter:   @AstraaDev\n                                                {y}[{w}#{y}]{w} Discord:   None\n\n\n\n\n""")
             input(f"""{y}[{b}#{y}]{w} Press ENTER to exit""")
             main()
         elif choice == '25':
@@ -125,8 +135,7 @@ def main():
 
 if __name__ == "__main__":
     import sys
-    setTitle("@TIO Premium Loading...")
-    
+    setTitle("@TIO Loading...")
     System.Size(120, 30)
     Anime.Fade(Center.Center(banner), Colors.purple_to_blue, Colorate.Vertical, time=1)
     if not os.path.exists("output"):
@@ -137,8 +146,6 @@ if __name__ == "__main__":
     os.system("""if not exist "util/chromedriver.exe" curl -#fkLo "util/chromedriver.exe" "https://github.com/AstraaDev/complement/raw/main/chromedriver.exe" """)
     if os.path.basename(sys.argv[0]).endswith("exe"):
         search_for_updates()
-        if not os.path.exists(getTempDir()+"\\atio_proxies"):
-            proxy_scrape()
         clear()
         main()
     try:
@@ -147,8 +154,6 @@ if __name__ == "__main__":
         input(f"{y}[{Fore.RED}#{y}]{w} Sorry but, your python version ({sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]}) is not compatible with @TIO, please download python 3.9 or higher.")
         sys.exit()
     else:
-        search_for_updates()
-        if not os.path.exists(getTempDir()+"\\atio_proxies"):
-            proxy_scrape()
+        #search_for_updates()
         clear()
         main()
