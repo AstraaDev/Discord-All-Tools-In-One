@@ -1,9 +1,8 @@
 <p align="center">
-  <img src="https://i.discord.fr/PSS.png">
+  <img src="https://3684636823-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FAAWXLgBhsxb38Q3iF3ha%2Fsocialpreview%2FJYYwVSNx9yLnXY8adfAU%2Fbanner.png?alt=media&token=264b3ce3-6643-4b55-8990-ca5cd2516dce">
 </p>
 
 <h1 align="center">[Discord] - ATIO (V1.3.0)</h1>
-<h1 align="center">The project is no longer under active development and will not receive any further updates or bug fixes.</h1>
 <p align="center">
   <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-important">
@@ -11,15 +10,8 @@
   <a href="https://www.python.org">
     <img src="https://img.shields.io/badge/Python-3.9-informational.svg">
   </a>
-  <a href="https://github.com/AstraaDev/Discord-All-Tools-In-One">
-    <img src="https://img.shields.io/badge/covarage-95%25-green">
-  </a>
   <a href="https://github.com/AstraaDev">
     <img src="https://img.shields.io/github/repo-size/AstraaDev/Discord-All-Tools-In-One.svg?label=Repo%20size&style=flat-square">
-  </a>
-    <p align="center"> <a href="https://twitter.com/astraadev" target="blank">
-    <img src="https://img.shields.io/twitter/follow/astraadev?logo=twitter&style=for-the-badge" alt="astraadev"/></a>
-  </a>
 </p>
 
 <p align="center">
@@ -72,18 +64,14 @@ $ python -m pip install -r requirements.txt
 $ python3 atio.py
 ```
 
-## Additional Informations
-General Informations:
-- If you have a problem, [CLICK HERE](https://www.youtube.com/watch?v=o-YBDTqX_ZU) to watch the YouTube video.
+## Additional Information
 - Find your output files in the  [output](/output) folder.
-- If you find any malfunction, contact me on Discord: None.
+- For support, join the [Discord Server](https://discord.gg/PKR7nM9j9U).
+- Contributions are welcome. Feel free to open an issue or create a pull request.
 
 ## Example
-![home.png](https://cdn.discordapp.com/attachments/1033450243481677874/1149718136258576466/image.png)
+![home.png](https://cdn.discordapp.com/attachments/1079127307656122501/1326257942571253831/image.png?ex=677ec576&is=677d73f6&hm=c8d82a6a8215b93e9314a1115d23732a08853e45f380e43ce5ee2fed0b6865d8&)
 
 ## Errors/Fixes
-
 pyinstaller is not recognized as an external command
 > open a cmd and type `pip install pyinstaller` or make sure [python](https://www.python.org/downloads/) is added to [PATH](https://datatofish.com/add-python-to-windows-path/)
-
-> You probably have python 3.10 which has some new shit so downgrade to [python 3.9](https://www.python.org/downloads/release/python-397/)
