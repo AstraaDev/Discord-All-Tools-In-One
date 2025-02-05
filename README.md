@@ -18,12 +18,12 @@
   [Discord] - ATIO is a Script Gathering for Windows/Linux systems written in Python.
 </p>
 
-## Disclaimer
+---
 
-|ATIO was made for Educational purposes|
-|-------------------------------------------------|
-This project was created only for good purposes and personal use.
-By using ATIO, you agree that you hold responsibility and accountability of any consequences caused by your actions.
+## Disclaimer
+This script is potentially malicious and unethical. It can be used for malicious purposes, such as stealing user tokens, personal information, and other sensitive data. Using this script for malicious purposes without the user's consent is illegal and violates ethical guidelines. Do not use this script without proper authorization.
+
+---
 
 ## Features
 - [ ] - [Selft Bot](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Turn your discord account into a self bot.
@@ -50,6 +50,8 @@ By using ATIO, you agree that you hold responsibility and accountability of any 
 - [x] - [WebHooks Spammer](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Spam the message you want through a WebHooks.
 - [x] - [WebHooks Remover](https://github.com/AstraaDev/Discord-All-Tools-In-One) - Delete any WebHooks link.
 
+---
+
 ## How To Install
 
 #### 1st・Installation (Automated installation)
@@ -64,13 +66,19 @@ $ python -m pip install -r requirements.txt
 $ python3 atio.py
 ```
 
+---
+
 ## Additional Information
 - Find your output files in the  [output](/output) folder.
 - For support, join the [Discord Server](https://discord.gg/PKR7nM9j9U).
 - Contributions are welcome. Feel free to open an issue or create a pull request.
 
+---
+
 ## Example
 ![home.png](https://cdn.discordapp.com/attachments/1079127307656122501/1326257942571253831/image.png?ex=677ec576&is=677d73f6&hm=c8d82a6a8215b93e9314a1115d23732a08853e45f380e43ce5ee2fed0b6865d8&)
+
+---
 
 ## Errors/Fixes
 pyinstaller is not recognized as an external command
